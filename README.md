@@ -121,6 +121,10 @@ Here is a step-by-step example of how to send a vaild signed payload from the Li
   [linux]$ curl -H "X-CH-APIKEY: c3b165fd5218cdd2c2874c65da468b1e" -H "X-CH-SIGN: c50d0a74bb9427a9a03933d0eded03af9bf50115dc5b706882a4fcf07a26b761" -H "X-CH-TS: 1588591856950" -H "Content-Type:application/json" -X POST 'http://localhost:30000/sapi/v1/order/test' -d '{"symbol":"BTCUSDT","price":"9300","quantity":"1","side":"BUY","type":"LIMIT"}'
  ```
 
+# example
+[java](https://github.com/Bitrue-exchange/futures_api_examples)
+[python](https://github.com/Bitrue-exchange/futures_api_examples)
+
 # public API
 
 ## Security: None
