@@ -304,8 +304,8 @@ The fields bids and asks are lists of order book price level entries, sorted fro
 | name                    | type              | example                  | description                          |
 | ----------------------- | ----------------- | ------------------------ | ------------------------------------ |
 | time                    | long              | 1595563624731            | Open time                            |
-| high                    | float             | 9900                     | Higher price                         |
-| low                     | float             | 8800.34                  | Lower price                          |
+| high                    | float             | 9900                     | Highest price                         |
+| low                     | float             | 8800.34                  | Lowest price                          |
 | last                    | float             | 8900                     | Newest price                         | 
 | vol                     | float             | 4999                     | Trade volume                         |
 | rose                    | string            | +0.5                     | Price variation                      |
@@ -319,7 +319,7 @@ The fields bids and asks are lists of order book price level entries, sorted fro
 
 | name                  | type          | memo                                    |
 | --------------------- | ------------- | --------------------------------------- |
-| Contract name         |  string       |  Contract Name E.g. E-BTC-USDT          |
+| contractName         |  string       |  ContractName E.g. E-BTC-USDT          |
 
 ###### Response
 
@@ -483,8 +483,8 @@ Creation of single new orders
 
 #### /fapi/v1/cancel (POST)
 
-Cancel order
-Speed limit rules: 20 times/ 2 seconds
+Cancel order. 
+Rate limit: 20 times/ 2 seconds
 
 ###### Parameters
 
@@ -571,7 +571,7 @@ retrieve all open order in a contract name.
 | avgPrice                | float  | 4754.24  | Filled orders average price |
 | type                    | string | LIMIT    | Order type. Possible values can only be:LIMIT(limit price) and MARKET（market price）|
 | side                    | string | BUY      |Order direction. Possible values can only be: BUY（buy long）and SELL（sell short）  |
-| status                  | string | NEW      |Order status. Possible values are：NEW(new order，not filled)、PARTIALLY_FILLED(partially filled), FILLED（fully filled, CANCELLED（already cancelled）and REJECTED（order rejected）|
+| status                  | string | NEW      |Order status. Possible values are：NEW(new order，not filled),PARTIALLY_FILLED(partially filled), FILLED（fully filled, CANCELLED（already cancelled）and REJECTED（order rejected）|
 | action                  | string | OPEN     | OPEN/CLOSE   |
 | transactTime            | long |1607702400000 |Order creation time |
 
@@ -650,7 +650,7 @@ All interfaces under the account require `signature` and `API-key` verification�
 
 Account info
 
-Speed limit rules: 20 times/2s
+Rate limit rules: 20 times/2s
 
 
 ###### Parameters
