@@ -36,7 +36,7 @@
 
 * There will be a limited frequency description below each interface.
 * A 429 will be returned when either rate limit is violated.
-* A 429 will be returned when either rate limit is violated.
+
 
 ## Endpoint Security Type
 
@@ -233,7 +233,7 @@ Market depth data
 | name                  | type          | memo                                    |
 | --------------------- | ------------- | --------------------------------------- |
 | limit                 |  integer      |  Default 100, Max 100                   |
-| Contract name         |  string       |  Contract Name E.g. E-BTC-USDT          |
+| contractName          |  string       |  contractName E.g. E-BTC-USDT           |
 
 ###### Response
 
@@ -285,7 +285,7 @@ The fields bids and asks are lists of order book price level entries, sorted fro
 
 | name                  | type          | memo                                    |
 | --------------------- | ------------- | --------------------------------------- |
-| Contract name         |  string       |  Contract Name E.g. E-BTC-USDT          |
+| contractName          |  string       |  contractName E.g. E-BTC-USDT           |
 
 ###### Response
 
@@ -318,7 +318,7 @@ The fields bids and asks are lists of order book price level entries, sorted fro
 
 | name                  | type          | memo                                    |
 | --------------------- | ------------- | --------------------------------------- |
-| Contract name         |  string       |  Contract Name E.g. E-BTC-USDT          |
+| contractName          |  string       |  Contract Name E.g. E-BTC-USDT          |
 
 ###### Response
 
@@ -352,7 +352,7 @@ kline/charts data
 
 | name                  | type          | memo                                    |
 | --------------------- | ------------- | --------------------------------------- |
-| ContractName          |  string       |  Contract Name E.g. E-BTC-USDT          |
+| contractName          |  string       |  Contract Name E.g. E-BTC-USDT          |
 | interval              | string        | identifies the sent value as: 1min,5min,15min,30min,1h,1day,1week,1month |
 | limit                 | integer       | Default 100, Max 300                    |
 
