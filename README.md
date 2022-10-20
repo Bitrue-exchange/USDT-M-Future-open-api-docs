@@ -311,40 +311,6 @@ The fields bids and asks are lists of order book price level entries, sorted fro
 | rose                    | string            | +0.5                     | Price variation                      |
 
 
-#### /fapi/v1/ticker
-
-24 hour price change statistics
-
-###### Parameters
-
-| name                  | type          | memo                                    |
-| --------------------- | ------------- | --------------------------------------- |
-| contractName         |  string       |  ContractName E.g. E-BTC-USDT          |
-
-###### Response
-
-``` json
-{
-    "high": "9279.0301",
-    "vol": "1302",
-    "last": "9200",
-    "low": "9279.0301",
-    "rose": "0",
-    "time": 1595563624731
-}
-```
-
-| name                    | type              | example                  | description                          |
-| ----------------------- | ----------------- | ------------------------ | ------------------------------------ |
-| time                    | long              | 1595563624731            | Open time                            |
-| high                    | float             | 9900                     | Highest  price                         |
-| low                     | float             | 8800.34                  | Lowest price                          |
-| last                    | float             | 8900                     | Newest price                         | 
-| vol                     | float             | 4999                     | Trade volume                         |
-| rose                    | string            | +0.5                     | Price variation                      |
-
-
-
 #### /fapi/v1/klines
 
 kline/charts data
