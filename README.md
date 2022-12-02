@@ -234,7 +234,7 @@ Market depth data
 | name                  | type          | memo                                    |
 | --------------------- | ------------- | --------------------------------------- |
 | limit                 |  integer      |  Default 100, Max 100                   |
-| Contract name         |  string       |  Contract Name E.g. E-BTC-USDT          |
+| contractName         |  string       |  Contract Name E.g. E-BTC-USDT          |
 
 ###### Response
 
@@ -286,7 +286,7 @@ The fields bids and asks are lists of order book price level entries, sorted fro
 
 | name                  | type          | memo                                    |
 | --------------------- | ------------- | --------------------------------------- |
-| Contract name         |  string       |  Contract Name E.g. E-BTC-USDT          |
+| contractName         |  string       |  Contract Name E.g. E-BTC-USDT          |
 
 ###### Response
 
