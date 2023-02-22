@@ -427,7 +427,7 @@ Creation of single new orders
 
 | name                  | type          | memo                                    |
 | --------------------- | ------------- | --------------------------------------- |
-| volume                | number        | Order quantity                          |
+| volume                | integer       | Order quantity                          |
 | price                 | number        | Order price                             |
 | contractName          | string        | Contract name E.g. E-BTC-USDT           |
 | type                  | string        | Order type, LIMIT/MARKET                |
