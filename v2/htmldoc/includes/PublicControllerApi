@@ -1,0 +1,169 @@
+<h1 id='market-data-endpoints'>Market Data Endpoints</h1><h2 id='test-connectivity'>Test Connectivity</h2><div class="highlight"><pre class="highlight plaintext"><code>curl -X GET -i /fapi/v1/ping
+</code></pre></div>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{}</span><span class="w">
+</span></code></pre></div>
+<p><strong>URL:</strong> <code>/fapi/v1/ping</code></p>
+
+<p><strong>Type:</strong> <code>GET</code></p>
+
+<p><strong>Content-Type:</strong> <code>application/x-www-form-urlencoded;charset=UTF-8</code></p>
+
+<p><strong>Description:</strong> Test Connectivity PING</p>
+<h2 id='check-server-time'>Check Server Time</h2><div class="highlight"><pre class="highlight plaintext"><code>curl -X GET -i /fapi/v1/time
+</code></pre></div>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{}</span><span class="w">
+</span></code></pre></div>
+<p><strong>URL:</strong> <code>/fapi/v1/time</code></p>
+
+<p><strong>Type:</strong> <code>GET</code></p>
+
+<p><strong>Content-Type:</strong> <code>application/x-www-form-urlencoded;charset=UTF-8</code></p>
+
+<p><strong>Description:</strong> Check Server Time</p>
+
+<p><strong>Response-fields:</strong></p>
+
+<table><thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>any object</td>
+<td>object</td>
+<td>any object.</td>
+</tr>
+</tbody></table>
+<h2 id='current-open-contract'>Current open contract</h2><div class="highlight"><pre class="highlight plaintext"><code>curl -X GET -i /fapi/v1/contracts
+</code></pre></div>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"symbol"</span><span class="p">:</span><span class="w"> </span><span class="s2">"H-HT-USDT"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"pricePrecision"</span><span class="p">:</span><span class="w"> </span><span class="mi">8</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"side"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"maxMarketVolume"</span><span class="p">:</span><span class="w"> </span><span class="mi">100000</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"multiplier"</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"minOrderVolume"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"maxMarketMoney"</span><span class="p">:</span><span class="w"> </span><span class="mi">10000000</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"H"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"maxLimitVolume"</span><span class="p">:</span><span class="w"> </span><span class="mi">1000000</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"maxValidOrder"</span><span class="p">:</span><span class="w"> </span><span class="mi">20</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"multiplierCoin"</span><span class="p">:</span><span class="w"> </span><span class="s2">"HT"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"minOrderMoney"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.001</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"maxLimitMoney"</span><span class="p">:</span><span class="w"> </span><span class="mi">1000000</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre></div>
+<p><strong>URL:</strong> <code>/fapi/v1/contracts</code></p>
+
+<p><strong>Type:</strong> <code>GET</code></p>
+
+<p><strong>Content-Type:</strong> <code>application/x-www-form-urlencoded;charset=UTF-8</code></p>
+
+<p><strong>Description:</strong> Current open contract</p>
+
+<p><strong>Query-parameters:</strong></p>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>contractName</td>
+<td>string</td>
+<td>true</td>
+<td>Contract Name E.g. E-BTC-USD</td>
+</tr>
+</tbody></table>
+
+<p><strong>Response-fields:</strong></p>
+
+<table><thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>symbol</td>
+<td>string</td>
+<td>Contract name</td>
+</tr>
+<tr>
+<td>status</td>
+<td>number</td>
+<td>status (0:cannot trade, 1:can trade)</td>
+</tr>
+<tr>
+<td>type</td>
+<td>string</td>
+<td>contract type, E: perpetual contract, S: test contract, others are mixed contract</td>
+</tr>
+<tr>
+<td>side</td>
+<td>number</td>
+<td>Contract direction(backwards：0，1：forward)</td>
+</tr>
+<tr>
+<td>multiplier</td>
+<td>number</td>
+<td>Contract face value</td>
+</tr>
+<tr>
+<td>multiplierCoin</td>
+<td>string</td>
+<td>Contract face value unit</td>
+</tr>
+<tr>
+<td>pricePrecision</td>
+<td>number</td>
+<td>Precision of the price</td>
+</tr>
+<tr>
+<td>minOrderVolume</td>
+<td>number</td>
+<td>Minimum order volume</td>
+</tr>
+<tr>
+<td>minOrderMoney</td>
+<td>number</td>
+<td>Minimum order value</td>
+</tr>
+<tr>
+<td>maxMarketVolume</td>
+<td>number</td>
+<td>Market price order maximum volume</td>
+</tr>
+<tr>
+<td>maxMarketMoney</td>
+<td>number</td>
+<td>Market price order maximum value</td>
+</tr>
+<tr>
+<td>maxLimitVolume</td>
+<td>number</td>
+<td>Limit price order maximum volume</td>
+</tr>
+<tr>
+<td>maxValidOrder</td>
+<td>number</td>
+<td>Maximum valid order quantity</td>
+</tr>
+</tbody></table>

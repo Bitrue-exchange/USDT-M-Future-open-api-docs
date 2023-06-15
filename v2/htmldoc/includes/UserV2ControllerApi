@@ -1,0 +1,1313 @@
+<h1 id='usd-m-futures-user'>USDⓈ-M Futures:user</h1><h2 id='account-information-v2-user_data-hmac-sha256'>Account Information V2 (USER_DATA)(HMAC SHA256)</h2><div class="highlight"><pre class="highlight plaintext"><code>curl -X GET -i /fapi/v2/account
+</code></pre></div>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"code"</span><span class="p">:</span><span class="s2">"0"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"msg"</span><span class="p">:</span><span class="s2">"Success"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"data"</span><span class="p">:{</span><span class="w">
+    </span><span class="nl">"account"</span><span class="p">:[</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"marginCoin"</span><span class="p">:</span><span class="s2">"USDT"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"coinPrecious"</span><span class="p">:</span><span class="mi">4</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"accountNormal"</span><span class="p">:</span><span class="mf">1010.4043400372839856</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"accountLock"</span><span class="p">:</span><span class="mf">2.9827889600000006</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"partPositionNormal"</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"totalPositionNormal"</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"achievedAmount"</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"unrealizedAmount"</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"totalMarginRate"</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"totalEquity"</span><span class="p">:</span><span class="mf">1010.4043400372839856</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"partEquity"</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"totalCost"</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"sumMarginRate"</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"sumOpenRealizedAmount"</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"canUseTrialFund"</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"sumMaintenanceMargin"</span><span class="p">:</span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"futureModel"</span><span class="p">:</span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"positionVos"</span><span class="p">:[</span><span class="w">
+
+        </span><span class="p">]</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"marginCoin"</span><span class="p">:</span><span class="s2">"USDC"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"coinPrecious"</span><span class="p">:</span><span class="mi">8</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"accountNormal"</span><span class="p">:</span><span class="mf">9999981.6304078411247375</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"accountLock"</span><span class="p">:</span><span class="mf">1.4950614966</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"partPositionNormal"</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"totalPositionNormal"</span><span class="p">:</span><span class="mf">1.5610615</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"achievedAmount"</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"unrealizedAmount"</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"totalMarginRate"</span><span class="p">:</span><span class="mf">128117.7154579628016855</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"totalEquity"</span><span class="p">:</span><span class="mf">9999981.6304078411247375</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"partEquity"</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"totalCost"</span><span class="p">:</span><span class="mf">1.5610615</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"sumMarginRate"</span><span class="p">:</span><span class="mf">128117.7346123843289321</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"sumOpenRealizedAmount"</span><span class="p">:</span><span class="mf">-3.29999999</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"canUseTrialFund"</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"sumMaintenanceMargin"</span><span class="p">:</span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"futureModel"</span><span class="p">:</span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"positionVos"</span><span class="p">:[</span><span class="w">
+          </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"contractId"</span><span class="p">:</span><span class="mi">62</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"contractName"</span><span class="p">:</span><span class="s2">"E-BTC-USDC"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"contractSymbol"</span><span class="p">:</span><span class="s2">"BTC-USDC"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"adlEnabled"</span><span class="p">:</span><span class="kc">false</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"positions"</span><span class="p">:[</span><span class="w">
+              </span><span class="p">{</span><span class="w">
+                </span><span class="nl">"id"</span><span class="p">:</span><span class="mi">175633</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"uid"</span><span class="p">:</span><span class="mi">10294</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"contractId"</span><span class="p">:</span><span class="mi">62</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"positionType"</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"side"</span><span class="p">:</span><span class="s2">"BUY"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"volume"</span><span class="p">:</span><span class="mi">30</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"openPrice"</span><span class="p">:</span><span class="mf">27117.691603</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"avgPrice"</span><span class="p">:</span><span class="mf">26017.691606</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"closePrice"</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"leverageLevel"</span><span class="p">:</span><span class="mi">50</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"openAmount"</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"holdAmount"</span><span class="p">:</span><span class="mf">1.5610615</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"closeVolume"</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"pendingCloseVolume"</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"realizedAmount"</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"historyRealizedAmount"</span><span class="p">:</span><span class="mf">-3.47655433</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"forceLiquidationVolume"</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"forceLiquidationPrice"</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"tradeFee"</span><span class="p">:</span><span class="mf">-0.02450636</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"capitalFee"</span><span class="p">:</span><span class="mf">-0.15204798</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"closeProfit"</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"shareAmount"</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"freezeLock"</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"status"</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"ctime"</span><span class="p">:</span><span class="s2">"2023-06-06T09:48:43"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"mtime"</span><span class="p">:</span><span class="s2">"2023-06-14T04:39:28"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"brokerId"</span><span class="p">:</span><span class="mi">1000</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"usingAccountType"</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"marginRate"</span><span class="p">:</span><span class="mf">0.0001</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"reducePrice"</span><span class="p">:</span><span class="mf">-3350051449.6928050669137353</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"returnRate"</span><span class="p">:</span><span class="mf">-2.1139461825781778</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"unRealizedAmount"</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"openRealizedAmount"</span><span class="p">:</span><span class="mf">-3.29999999</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"positionBalance"</span><span class="p">:</span><span class="mf">78.05307482</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"settleProfit"</span><span class="p">:</span><span class="mf">-3.29999999</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"keepRate"</span><span class="p">:</span><span class="mf">0.004</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"maxFeeRate"</span><span class="p">:</span><span class="mf">0.001</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"indexPrice"</span><span class="p">:</span><span class="mf">26017.691606</span><span class="w">
+              </span><span class="p">}</span><span class="w">
+            </span><span class="p">]</span><span class="w">
+          </span><span class="p">}</span><span class="w">
+        </span><span class="p">]</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p><strong>URL:</strong> <code>/fapi/v2/account</code></p>
+
+<p><strong>Type:</strong> <code>GET</code></p>
+
+<p><strong>Content-Type:</strong> <code>application/x-www-form-urlencoded;charset=UTF-8</code></p>
+
+<p><strong>Description:</strong> Account Information V2 (USER_DATA)(HMAC SHA256)</p>
+
+<p><strong>Response-fields:</strong></p>
+
+<table><thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>code</td>
+<td>string</td>
+<td>status code</td>
+</tr>
+<tr>
+<td>msg</td>
+<td>string</td>
+<td>message content</td>
+</tr>
+<tr>
+<td>data</td>
+<td>object</td>
+<td>return data</td>
+</tr>
+<tr>
+<td>└─account</td>
+<td>array</td>
+<td>Account V2</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└─marginCoin</td>
+<td>string</td>
+<td>Margin coin</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└─coinPrecious</td>
+<td>int</td>
+<td>Currency display precision</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└─accountNormal</td>
+<td>bigdecimal</td>
+<td>Balance account</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└─accountLock</td>
+<td>bigdecimal</td>
+<td>Margin frozen account</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└─partPositionNormal</td>
+<td>bigdecimal</td>
+<td>Restricted position margin balance</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└─totalPositionNormal</td>
+<td>bigdecimal</td>
+<td>Full position initial margin</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└─achievedAmount</td>
+<td>bigdecimal</td>
+<td>Profit and losses occurred</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└─unrealizedAmount</td>
+<td>bigdecimal</td>
+<td>Unfilled profit and losses</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└─totalMarginRate</td>
+<td>bigdecimal</td>
+<td>Full position margin rate</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└─totalEquity</td>
+<td>bigdecimal</td>
+<td>Full position equity</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└─partEquity</td>
+<td>bigdecimal</td>
+<td>Restricted position equity</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└─totalCost</td>
+<td>bigdecimal</td>
+<td>Full position costs</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└─sumMarginRate</td>
+<td>bigdecimal</td>
+<td>All accounts margin rate</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└─sumOpenRealizedAmount</td>
+<td>bigdecimal</td>
+<td>Full account position profit and loss</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└─canUseTrialFund</td>
+<td>bigdecimal</td>
+<td>Available experience money</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└─sumMaintenanceMargin</td>
+<td>bigdecimal</td>
+<td>Full position maintenance margin plus handling fee</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└─futureModel</td>
+<td>enum</td>
+<td>Account type</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└─positionVos</td>
+<td>array</td>
+<td>Position contract record</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└─contractId</td>
+<td>int</td>
+<td>Contract id</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└─contractName</td>
+<td>string</td>
+<td>Contract name</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└─contractSymbol</td>
+<td>string</td>
+<td>Contract coin pair</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└─adlEnabled</td>
+<td>boolean</td>
+<td>adl</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└─positions</td>
+<td>array</td>
+<td>positions</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└─id</td>
+<td>int</td>
+<td>id</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└─uid</td>
+<td>int</td>
+<td>user id</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└─contractId</td>
+<td>int</td>
+<td>contract id</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└─positionType</td>
+<td>int</td>
+<td>Hold-up position, 1 full position, 2 restrictive position</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└─side</td>
+<td>string</td>
+<td>trade direction, BUY/SELL</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└─volume</td>
+<td>bigdecimal</td>
+<td>Order quantity</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└─openPrice</td>
+<td>bigdecimal</td>
+<td>open price</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└─avgPrice</td>
+<td>bigdecimal</td>
+<td>avg price</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└─closePrice</td>
+<td>bigdecimal</td>
+<td>Balancing average price</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└─leverageLevel</td>
+<td>int</td>
+<td>Leverage multiple</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└─openAmount</td>
+<td>bigdecimal</td>
+<td>Opening margin (including variation)</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└─holdAmount</td>
+<td>bigdecimal</td>
+<td>Hold position margin</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└─closeVolume</td>
+<td>bigdecimal</td>
+<td>Balanced quantity</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└─pendingCloseVolume</td>
+<td>bigdecimal</td>
+<td>The number of pending closing orders</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└─realizedAmount</td>
+<td>bigdecimal</td>
+<td>Profit and losses occurred</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└─historyRealizedAmount</td>
+<td>bigdecimal</td>
+<td>Historic accumulated profit and losses</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└─forceLiquidationVolume</td>
+<td>bigdecimal</td>
+<td>Strong flat quantity</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└─forceLiquidationPrice</td>
+<td>bigdecimal</td>
+<td>Strong leveling price (average price, trigger price).</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└─tradeFee</td>
+<td>bigdecimal</td>
+<td>Trading fees</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└─capitalFee</td>
+<td>bigdecimal</td>
+<td>Capital costs</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└─closeProfit</td>
+<td>bigdecimal</td>
+<td>Balancing profit and loss</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└─shareAmount</td>
+<td>bigdecimal</td>
+<td>Amount to share</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└─freezeLock</td>
+<td>int</td>
+<td>Position freeze status: 0 normal, 1 liquidation freeze, 2 delivery freeze</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└─status</td>
+<td>int</td>
+<td>Position effectiveness，0 ineffective 1 effective</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└─ctime</td>
+<td>string</td>
+<td>Creation time</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└─mtime</td>
+<td>string</td>
+<td>Update time</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└─lockTime</td>
+<td>string</td>
+<td>liquidation lock time</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└─positionAmount</td>
+<td>bigdecimal</td>
+<td>Total position value (full) multiplied by face value</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└─positionCloseAmount</td>
+<td>bigdecimal</td>
+<td>Total closing value (full amount) multiplied by face value</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└─longAccountCount</td>
+<td>int</td>
+<td>Number of multiple positions</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└─shortAccountCount</td>
+<td>int</td>
+<td>Number of open positions</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└─sumRealized</td>
+<td>bigdecimal</td>
+<td>The total realized profit and loss of this settlement cycle</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└─deficitLosses</td>
+<td>bigdecimal</td>
+<td>Customer account deficit at position settlement</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└─currentMarginRate</td>
+<td>bigdecimal</td>
+<td>Current margin ratio</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└─realEquity</td>
+<td>bigdecimal</td>
+<td>Balance occupied by current contracts, excluding realized and unrealized gains and losses</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└─positionId</td>
+<td>int</td>
+<td>Location ID, associated with the location list id, primary key</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└─ctime</td>
+<td>string</td>
+<td>create time</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└─mtime</td>
+<td>string</td>
+<td>update time</td>
+</tr>
+</tbody></table>
+<h2 id='notional-and-leverage-brackets-user_data'>Notional and Leverage Brackets (USER_DATA)</h2><div class="highlight"><pre class="highlight plaintext"><code>curl -X GET -i /fapi/v2/leverageBracket?contractName=E-SAND-USDC
+</code></pre></div>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"code"</span><span class="p">:</span><span class="s2">"0"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"msg"</span><span class="p">:</span><span class="s2">"Success"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"data"</span><span class="p">:{</span><span class="w">
+        </span><span class="nl">"contractName"</span><span class="p">:</span><span class="s2">"E-SAND-USDC"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"brackets"</span><span class="p">:[</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+                </span><span class="nl">"bracket"</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"initialLeverage"</span><span class="p">:</span><span class="mi">100</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"maxPositionValue"</span><span class="p">:</span><span class="mi">10000</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"minPositionValue"</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"maintMarginRatio"</span><span class="p">:</span><span class="mf">0.008</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+                </span><span class="nl">"bracket"</span><span class="p">:</span><span class="mi">2</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"initialLeverage"</span><span class="p">:</span><span class="mi">75</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"maxPositionValue"</span><span class="p">:</span><span class="mi">100000</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"minPositionValue"</span><span class="p">:</span><span class="mi">10000</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"maintMarginRatio"</span><span class="p">:</span><span class="mf">0.0085</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+                </span><span class="nl">"bracket"</span><span class="p">:</span><span class="mi">3</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"initialLeverage"</span><span class="p">:</span><span class="mi">50</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"maxPositionValue"</span><span class="p">:</span><span class="mi">500000</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"minPositionValue"</span><span class="p">:</span><span class="mi">100000</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"maintMarginRatio"</span><span class="p">:</span><span class="mf">0.012</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+                </span><span class="nl">"bracket"</span><span class="p">:</span><span class="mi">4</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"initialLeverage"</span><span class="p">:</span><span class="mi">25</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"maxPositionValue"</span><span class="p">:</span><span class="mi">1000000</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"minPositionValue"</span><span class="p">:</span><span class="mi">500000</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"maintMarginRatio"</span><span class="p">:</span><span class="mf">0.022</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+                </span><span class="nl">"bracket"</span><span class="p">:</span><span class="mi">5</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"initialLeverage"</span><span class="p">:</span><span class="mi">10</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"maxPositionValue"</span><span class="p">:</span><span class="mi">2000000</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"minPositionValue"</span><span class="p">:</span><span class="mi">1000000</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"maintMarginRatio"</span><span class="p">:</span><span class="mf">0.05</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+                </span><span class="nl">"bracket"</span><span class="p">:</span><span class="mi">6</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"initialLeverage"</span><span class="p">:</span><span class="mi">5</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"maxPositionValue"</span><span class="p">:</span><span class="mi">5000000</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"minPositionValue"</span><span class="p">:</span><span class="mi">2000000</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"maintMarginRatio"</span><span class="p">:</span><span class="mf">0.1</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+                </span><span class="nl">"bracket"</span><span class="p">:</span><span class="mi">7</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"initialLeverage"</span><span class="p">:</span><span class="mi">4</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"maxPositionValue"</span><span class="p">:</span><span class="mi">10000000</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"minPositionValue"</span><span class="p">:</span><span class="mi">5000000</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"maintMarginRatio"</span><span class="p">:</span><span class="mf">0.125</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+                </span><span class="nl">"bracket"</span><span class="p">:</span><span class="mi">8</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"initialLeverage"</span><span class="p">:</span><span class="mi">3</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"maxPositionValue"</span><span class="p">:</span><span class="mi">20000000</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"minPositionValue"</span><span class="p">:</span><span class="mi">10000000</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"maintMarginRatio"</span><span class="p">:</span><span class="mf">0.15</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+                </span><span class="nl">"bracket"</span><span class="p">:</span><span class="mi">9</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"initialLeverage"</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"maxPositionValue"</span><span class="p">:</span><span class="mi">9999999998</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"minPositionValue"</span><span class="p">:</span><span class="mi">20000000</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"maintMarginRatio"</span><span class="p">:</span><span class="mf">0.25</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+        </span><span class="p">]</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p><strong>URL:</strong> <code>/fapi/v2/leverageBracket</code></p>
+
+<p><strong>Type:</strong> <code>GET</code></p>
+
+<p><strong>Content-Type:</strong> <code>application/x-www-form-urlencoded;charset=UTF-8</code></p>
+
+<p><strong>Description:</strong> Notional and Leverage Brackets (USER_DATA)</p>
+
+<p><strong>Query-parameters:</strong></p>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>contractName</td>
+<td>string</td>
+<td>true</td>
+<td>Contract name</td>
+</tr>
+</tbody></table>
+
+<p><strong>Response-fields:</strong></p>
+
+<table><thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>code</td>
+<td>string</td>
+<td>status code</td>
+</tr>
+<tr>
+<td>msg</td>
+<td>string</td>
+<td>message content</td>
+</tr>
+<tr>
+<td>data</td>
+<td>object</td>
+<td>return data</td>
+</tr>
+<tr>
+<td>└─contractName</td>
+<td>string</td>
+<td>Contract name</td>
+</tr>
+<tr>
+<td>└─brackets</td>
+<td>array</td>
+<td>brackets</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└─bracket</td>
+<td>int</td>
+<td>Notional bracket</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└─initialLeverage</td>
+<td>bigdecimal</td>
+<td>Max initial leverage for this bracket</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└─maxPositionValue</td>
+<td>bigdecimal</td>
+<td>Cap notional of this bracket</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└─minPositionValue</td>
+<td>bigdecimal</td>
+<td>Notional threshold of this bracket</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└─maintMarginRatio</td>
+<td>bigdecimal</td>
+<td>Maintenance ratio for this bracket</td>
+</tr>
+</tbody></table>
+<h2 id='user-commission-rate-user_data-hmac-sha256'>User Commission Rate (USER_DATA)(HMAC SHA256)</h2><div class="highlight"><pre class="highlight plaintext"><code>curl -X GET -i /fapi/v2/commissionRate?contractName=E-SAND-USDC
+</code></pre></div>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"code"</span><span class="p">:</span><span class="s2">"0"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"msg"</span><span class="p">:</span><span class="s2">"Success"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"data"</span><span class="p">:{</span><span class="w">
+        </span><span class="nl">"contractName"</span><span class="p">:</span><span class="s2">"E-SAND-USDC"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"openTakerFeeRate"</span><span class="p">:</span><span class="mf">0.0004</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"openMakerFeeRate"</span><span class="p">:</span><span class="mf">0.0002</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"closeTakerFeeRate"</span><span class="p">:</span><span class="mf">0.0004</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"closeMakerFeeRate"</span><span class="p">:</span><span class="mf">0.0002</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p><strong>URL:</strong> <code>/fapi/v2/commissionRate</code></p>
+
+<p><strong>Type:</strong> <code>GET</code></p>
+
+<p><strong>Content-Type:</strong> <code>application/x-www-form-urlencoded;charset=UTF-8</code></p>
+
+<p><strong>Description:</strong> User Commission Rate (USER_DATA)(HMAC SHA256)</p>
+
+<p><strong>Query-parameters:</strong></p>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>contractName</td>
+<td>string</td>
+<td>true</td>
+<td>Contract name</td>
+</tr>
+</tbody></table>
+
+<p><strong>Response-fields:</strong></p>
+
+<table><thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>code</td>
+<td>string</td>
+<td>status code</td>
+</tr>
+<tr>
+<td>msg</td>
+<td>string</td>
+<td>message content</td>
+</tr>
+<tr>
+<td>data</td>
+<td>object</td>
+<td>return data</td>
+</tr>
+<tr>
+<td>└─contractName</td>
+<td>string</td>
+<td>contract name</td>
+</tr>
+<tr>
+<td>└─openTakerFeeRate</td>
+<td>bigdecimal</td>
+<td>open taker fee rate</td>
+</tr>
+<tr>
+<td>└─openMakerFeeRate</td>
+<td>bigdecimal</td>
+<td>open maker fee rate</td>
+</tr>
+<tr>
+<td>└─closeTakerFeeRate</td>
+<td>bigdecimal</td>
+<td>close taker fee rate</td>
+</tr>
+<tr>
+<td>└─closeMakerFeeRate</td>
+<td>bigdecimal</td>
+<td>close maker fee rate</td>
+</tr>
+</tbody></table>
+<h2 id='new-future-account-transfer-user_data-hmac-sha256'>New Future Account Transfer (USER_DATA)(HMAC SHA256)</h2><div class="highlight"><pre class="highlight plaintext"><code>curl -X POST -H 'Content-Type: application/json' -i /fapi/v2/futures_transfer --data '{
+    'coinSymbol': 'USDT',
+    'amount': 10,
+    'transferType': 'wallet_to_contract'
+}'
+</code></pre></div>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="err">'code':</span><span class="w"> </span><span class="err">'</span><span class="mi">0</span><span class="err">'</span><span class="p">,</span><span class="w">
+    </span><span class="err">'msg':</span><span class="w"> </span><span class="err">'Success'</span><span class="p">,</span><span class="w">
+    </span><span class="err">'data':</span><span class="w"> </span><span class="err">None</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p><strong>URL:</strong> <code>/fapi/v2/futures_transfer</code></p>
+
+<p><strong>Type:</strong> <code>POST</code></p>
+
+<p><strong>Content-Type:</strong> <code>application/json</code></p>
+
+<p><strong>Description:</strong> New Future Account Transfer (USER_DATA)(HMAC SHA256)</p>
+
+<p><strong>Body-parameters:</strong></p>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>coinSymbol</td>
+<td>string</td>
+<td>true</td>
+<td>coin symbol</td>
+</tr>
+<tr>
+<td>amount</td>
+<td>bigdecimal</td>
+<td>true</td>
+<td>transfer amount</td>
+</tr>
+<tr>
+<td>transferType</td>
+<td>string</td>
+<td>true</td>
+<td>transfer type<br/>WALLET_TO_CONTRACT(&quot;wallet_to_contract&quot;, &quot;币币到合约&quot;),<br/>CONTRACT_TO_WALLET(&quot;contract_to_wallet&quot;, &quot;合约到币币&quot;)</td>
+</tr>
+<tr>
+<td>unionId</td>
+<td>string</td>
+<td>false</td>
+<td>transfer union tag</td>
+</tr>
+</tbody></table>
+
+<p><strong>Response-fields:</strong></p>
+
+<table><thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>code</td>
+<td>string</td>
+<td>status code</td>
+</tr>
+<tr>
+<td>msg</td>
+<td>string</td>
+<td>message content</td>
+</tr>
+<tr>
+<td>data</td>
+<td>object</td>
+<td>return data</td>
+</tr>
+</tbody></table>
+<h2 id='get-future-account-transfer-history-list-user_data-hmac-sha256'>Get Future Account transfer History List (USER_DATA)(HMAC SHA256)</h2><div class="highlight"><pre class="highlight plaintext"><code>curl -X GET -i /fapi/v2/futures_transfer_history?transferType=wallet_to_contract
+</code></pre></div>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="err">'code':</span><span class="w"> </span><span class="err">'</span><span class="mi">0</span><span class="err">'</span><span class="p">,</span><span class="w">
+    </span><span class="err">'msg':</span><span class="w"> </span><span class="err">'Success'</span><span class="p">,</span><span class="w">
+    </span><span class="err">'data':</span><span class="w"> </span><span class="p">[{</span><span class="w">
+        </span><span class="err">'transferType':</span><span class="w"> </span><span class="err">'wallet_to_contract'</span><span class="p">,</span><span class="w">
+        </span><span class="err">'symbol':</span><span class="w"> </span><span class="err">'USDT'</span><span class="p">,</span><span class="w">
+        </span><span class="err">'amount':</span><span class="w"> </span><span class="mf">1.0</span><span class="p">,</span><span class="w">
+        </span><span class="err">'status':</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+        </span><span class="err">'ctime':</span><span class="w"> </span><span class="mi">1685404575000</span><span class="w">
+    </span><span class="p">},</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="err">'transferType':</span><span class="w"> </span><span class="err">'wallet_to_contract'</span><span class="p">,</span><span class="w">
+        </span><span class="err">'symbol':</span><span class="w"> </span><span class="err">'USDT'</span><span class="p">,</span><span class="w">
+        </span><span class="err">'amount':</span><span class="w"> </span><span class="mf">3.0</span><span class="p">,</span><span class="w">
+        </span><span class="err">'status':</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+        </span><span class="err">'ctime':</span><span class="w"> </span><span class="mi">1685495897000</span><span class="w">
+    </span><span class="p">},</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="err">'transferType':</span><span class="w"> </span><span class="err">'wallet_to_contract'</span><span class="p">,</span><span class="w">
+        </span><span class="err">'symbol':</span><span class="w"> </span><span class="err">'USDT'</span><span class="p">,</span><span class="w">
+        </span><span class="err">'amount':</span><span class="w"> </span><span class="mf">566.0</span><span class="p">,</span><span class="w">
+        </span><span class="err">'status':</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+        </span><span class="err">'ctime':</span><span class="w"> </span><span class="mi">1685562991000</span><span class="w">
+    </span><span class="p">},</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="err">'transferType':</span><span class="w"> </span><span class="err">'wallet_to_contract'</span><span class="p">,</span><span class="w">
+        </span><span class="err">'symbol':</span><span class="w"> </span><span class="err">'USDT'</span><span class="p">,</span><span class="w">
+        </span><span class="err">'amount':</span><span class="w"> </span><span class="mf">66.0</span><span class="p">,</span><span class="w">
+        </span><span class="err">'status':</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+        </span><span class="err">'ctime':</span><span class="w"> </span><span class="mi">1685571419000</span><span class="w">
+    </span><span class="p">},</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="err">'transferType':</span><span class="w"> </span><span class="err">'wallet_to_contract'</span><span class="p">,</span><span class="w">
+        </span><span class="err">'symbol':</span><span class="w"> </span><span class="err">'USDT'</span><span class="p">,</span><span class="w">
+        </span><span class="err">'amount':</span><span class="w"> </span><span class="mf">3.0</span><span class="p">,</span><span class="w">
+        </span><span class="err">'status':</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+        </span><span class="err">'ctime':</span><span class="w"> </span><span class="mi">1685573130000</span><span class="w">
+    </span><span class="p">}]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p><strong>URL:</strong> <code>/fapi/v2/futures_transfer_history</code></p>
+
+<p><strong>Type:</strong> <code>GET</code></p>
+
+<p><strong>Content-Type:</strong> <code>application/x-www-form-urlencoded;charset=UTF-8</code></p>
+
+<p><strong>Description:</strong> Get Future Account transfer History List (USER_DATA)(HMAC SHA256)</p>
+
+<p><strong>Query-parameters:</strong></p>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>coinSymbol</td>
+<td>string</td>
+<td>false</td>
+<td>coin symbol</td>
+</tr>
+<tr>
+<td>beginTime</td>
+<td>long</td>
+<td>false</td>
+<td>default the recent 30-day data</td>
+</tr>
+<tr>
+<td>endTime</td>
+<td>long</td>
+<td>false</td>
+<td>end time</td>
+</tr>
+<tr>
+<td>transferType</td>
+<td>string</td>
+<td>true</td>
+<td>transfer type<br/>WALLET_TO_CONTRACT(&quot;wallet_to_contract&quot;, &quot;币币到合约&quot;),<br/>CONTRACT_TO_WALLET(&quot;contract_to_wallet&quot;, &quot;合约到币币&quot;)</td>
+</tr>
+<tr>
+<td>page</td>
+<td>int</td>
+<td>false</td>
+<td>default 1</td>
+</tr>
+<tr>
+<td>limit</td>
+<td>int</td>
+<td>false</td>
+<td>Default 10, Max 200</td>
+</tr>
+</tbody></table>
+
+<p><strong>Response-fields:</strong></p>
+
+<table><thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>code</td>
+<td>string</td>
+<td>status code</td>
+</tr>
+<tr>
+<td>msg</td>
+<td>string</td>
+<td>message content</td>
+</tr>
+<tr>
+<td>data</td>
+<td>array</td>
+<td>return data</td>
+</tr>
+<tr>
+<td>└─transferType</td>
+<td>string</td>
+<td>转账类型<br/>WALLET_TO_CONTRACT(&quot;wallet_to_contract&quot;, &quot;币币到合约&quot;),<br/>CONTRACT_TO_WALLET(&quot;contract_to_wallet&quot;, &quot;合约到币币&quot;)</td>
+</tr>
+<tr>
+<td>└─symbol</td>
+<td>string</td>
+<td>symbol</td>
+</tr>
+<tr>
+<td>└─amount</td>
+<td>bigdecimal</td>
+<td>transfer amount</td>
+</tr>
+<tr>
+<td>└─afterAmount</td>
+<td>bigdecimal</td>
+<td>after transfer amount</td>
+</tr>
+<tr>
+<td>└─status</td>
+<td>int</td>
+<td>Transfer status, 0 payment, 1 success and 2 failure</td>
+</tr>
+<tr>
+<td>└─ctime</td>
+<td>long</td>
+<td>create time</td>
+</tr>
+</tbody></table>
+<h2 id='user-39-s-force-orders-user_data'>User&#39;s Force Orders (USER_DATA)</h2><div class="highlight"><pre class="highlight plaintext"><code>curl -X GET -i /fapi/v2/forceOrdersHistory?contractName=E-BTC-USDC
+</code></pre></div>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="err">'code':</span><span class="w"> </span><span class="err">'</span><span class="mi">0</span><span class="err">'</span><span class="p">,</span><span class="w">
+    </span><span class="err">'msg':</span><span class="w"> </span><span class="err">'Success'</span><span class="p">,</span><span class="w">
+    </span><span class="err">'data':</span><span class="w"> </span><span class="p">[{</span><span class="w">
+        </span><span class="err">'id':</span><span class="w"> </span><span class="mi">1690600111070971191</span><span class="p">,</span><span class="w">
+        </span><span class="err">'clientId':</span><span class="w"> </span><span class="err">'</span><span class="mi">0</span><span class="err">'</span><span class="p">,</span><span class="w">
+        </span><span class="err">'uid':</span><span class="w"> </span><span class="mi">11568</span><span class="p">,</span><span class="w">
+        </span><span class="err">'positionType':</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+        </span><span class="err">'open':</span><span class="w"> </span><span class="err">'CLOSE'</span><span class="p">,</span><span class="w">
+        </span><span class="err">'side':</span><span class="w"> </span><span class="err">'SELL'</span><span class="p">,</span><span class="w">
+        </span><span class="err">'type':</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+        </span><span class="err">'leverageLevel':</span><span class="w"> </span><span class="mi">20</span><span class="p">,</span><span class="w">
+        </span><span class="err">'price':</span><span class="w"> </span><span class="mf">25878.61801778723</span><span class="p">,</span><span class="w">
+        </span><span class="err">'volume':</span><span class="w"> </span><span class="mf">357.0</span><span class="p">,</span><span class="w">
+        </span><span class="err">'openTakerFeeRate':</span><span class="w"> </span><span class="mf">0.0</span><span class="p">,</span><span class="w">
+        </span><span class="err">'openMakerFeeRate':</span><span class="w"> </span><span class="mf">0.0</span><span class="p">,</span><span class="w">
+        </span><span class="err">'closeTakerFeeRate':</span><span class="w"> </span><span class="mf">0.0</span><span class="p">,</span><span class="w">
+        </span><span class="err">'closeMakerFeeRate':</span><span class="w"> </span><span class="mf">0.0</span><span class="p">,</span><span class="w">
+        </span><span class="err">'realizedAmount':</span><span class="w"> </span><span class="mf">-44.21710198209588</span><span class="p">,</span><span class="w">
+        </span><span class="err">'dealVolume':</span><span class="w"> </span><span class="mi">357</span><span class="p">,</span><span class="w">
+        </span><span class="err">'dealMoney':</span><span class="w"> </span><span class="mf">923.8666632350041</span><span class="p">,</span><span class="w">
+        </span><span class="err">'lockMoney':</span><span class="w"> </span><span class="mf">0.0</span><span class="p">,</span><span class="w">
+        </span><span class="err">'unlockMoney':</span><span class="w"> </span><span class="mf">0.0</span><span class="p">,</span><span class="w">
+        </span><span class="err">'avgPrice':</span><span class="w"> </span><span class="mf">25878.61801779</span><span class="p">,</span><span class="w">
+        </span><span class="err">'tradeFee':</span><span class="w"> </span><span class="mf">0.0</span><span class="p">,</span><span class="w">
+        </span><span class="err">'status':</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+        </span><span class="err">'memo':</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="err">'source':</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w">
+        </span><span class="err">'ctime':</span><span class="w"> </span><span class="err">'</span><span class="mi">2023-06-13</span><span class="err">T</span><span class="mi">20</span><span class="err">:</span><span class="mi">55</span><span class="err">:</span><span class="mi">51</span><span class="err">'</span><span class="p">,</span><span class="w">
+        </span><span class="err">'mtime':</span><span class="w"> </span><span class="err">'</span><span class="mi">2023-06-13</span><span class="err">T</span><span class="mi">12</span><span class="err">:</span><span class="mi">55</span><span class="err">:</span><span class="mi">51</span><span class="err">'</span><span class="p">,</span><span class="w">
+        </span><span class="err">'brokerId':</span><span class="w"> </span><span class="mi">1000</span><span class="p">,</span><span class="w">
+        </span><span class="err">'usingAccountType':</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="err">'shareRoyaltyRatio':</span><span class="w"> </span><span class="mf">0.0</span><span class="w">
+    </span><span class="p">}]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p><strong>URL:</strong> <code>/fapi/v2/forceOrdersHistory</code></p>
+
+<p><strong>Type:</strong> <code>GET</code></p>
+
+<p><strong>Content-Type:</strong> <code>application/x-www-form-urlencoded;charset=UTF-8</code></p>
+
+<p><strong>Description:</strong> User&#39;s Force Orders (USER_DATA)</p>
+
+<p><strong>Query-parameters:</strong></p>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>contractName</td>
+<td>string</td>
+<td>true</td>
+<td>Contract name E.g. E-BTC-USD</td>
+</tr>
+<tr>
+<td>beginTime</td>
+<td>long</td>
+<td>false</td>
+<td>default the recent 30-day data</td>
+</tr>
+<tr>
+<td>endTime</td>
+<td>long</td>
+<td>false</td>
+<td>end time</td>
+</tr>
+<tr>
+<td>autoCloseType</td>
+<td>string</td>
+<td>false</td>
+<td>&quot;LIQUIDATION&quot; for liquidation orders, &quot;ADL&quot; for ADL orders.</td>
+</tr>
+<tr>
+<td>page</td>
+<td>int</td>
+<td>false</td>
+<td>Default 1</td>
+</tr>
+<tr>
+<td>limit</td>
+<td>int</td>
+<td>false</td>
+<td>Default 10, Max 200</td>
+</tr>
+</tbody></table>
+
+<p><strong>Response-fields:</strong></p>
+
+<table><thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>code</td>
+<td>string</td>
+<td>status code</td>
+</tr>
+<tr>
+<td>msg</td>
+<td>string</td>
+<td>message content</td>
+</tr>
+<tr>
+<td>data</td>
+<td>array</td>
+<td>return data</td>
+</tr>
+<tr>
+<td>└─id</td>
+<td>int</td>
+<td>id</td>
+</tr>
+<tr>
+<td>└─uid</td>
+<td>int</td>
+<td>user id</td>
+</tr>
+<tr>
+<td>└─contractId</td>
+<td>int</td>
+<td>contract id</td>
+</tr>
+<tr>
+<td>└─positionType</td>
+<td>int</td>
+<td>Hold-up position, 1 full position, 2 restrictive position</td>
+</tr>
+<tr>
+<td>└─side</td>
+<td>string</td>
+<td>trade direction, BUY/SELL</td>
+</tr>
+<tr>
+<td>└─volume</td>
+<td>bigdecimal</td>
+<td>Order quantity</td>
+</tr>
+<tr>
+<td>└─openPrice</td>
+<td>bigdecimal</td>
+<td>open price</td>
+</tr>
+<tr>
+<td>└─avgPrice</td>
+<td>bigdecimal</td>
+<td>avg price</td>
+</tr>
+<tr>
+<td>└─closePrice</td>
+<td>bigdecimal</td>
+<td>Balancing average price</td>
+</tr>
+<tr>
+<td>└─leverageLevel</td>
+<td>int</td>
+<td>Leverage multiple</td>
+</tr>
+<tr>
+<td>└─openAmount</td>
+<td>bigdecimal</td>
+<td>Opening margin (including variation)</td>
+</tr>
+<tr>
+<td>└─holdAmount</td>
+<td>bigdecimal</td>
+<td>Hold position margin</td>
+</tr>
+<tr>
+<td>└─closeVolume</td>
+<td>bigdecimal</td>
+<td>Balanced quantity</td>
+</tr>
+<tr>
+<td>└─pendingCloseVolume</td>
+<td>bigdecimal</td>
+<td>The number of pending closing orders</td>
+</tr>
+<tr>
+<td>└─realizedAmount</td>
+<td>bigdecimal</td>
+<td>Profit and losses occurred</td>
+</tr>
+<tr>
+<td>└─historyRealizedAmount</td>
+<td>bigdecimal</td>
+<td>Historic accumulated profit and losses</td>
+</tr>
+<tr>
+<td>└─forceLiquidationVolume</td>
+<td>bigdecimal</td>
+<td>Strong flat quantity</td>
+</tr>
+<tr>
+<td>└─forceLiquidationPrice</td>
+<td>bigdecimal</td>
+<td>Strong leveling price (average price, trigger price).</td>
+</tr>
+<tr>
+<td>└─tradeFee</td>
+<td>bigdecimal</td>
+<td>Trading fees</td>
+</tr>
+<tr>
+<td>└─capitalFee</td>
+<td>bigdecimal</td>
+<td>Capital costs</td>
+</tr>
+<tr>
+<td>└─closeProfit</td>
+<td>bigdecimal</td>
+<td>Balancing profit and loss</td>
+</tr>
+<tr>
+<td>└─shareAmount</td>
+<td>bigdecimal</td>
+<td>Amount to share</td>
+</tr>
+<tr>
+<td>└─freezeLock</td>
+<td>int</td>
+<td>Position freeze status: 0 normal, 1 liquidation freeze, 2 delivery freeze</td>
+</tr>
+<tr>
+<td>└─status</td>
+<td>int</td>
+<td>Position effectiveness，0 ineffective 1 effective</td>
+</tr>
+<tr>
+<td>└─ctime</td>
+<td>string</td>
+<td>Creation time</td>
+</tr>
+<tr>
+<td>└─mtime</td>
+<td>string</td>
+<td>Update time</td>
+</tr>
+<tr>
+<td>└─brokerId</td>
+<td>int</td>
+<td>Client id</td>
+</tr>
+<tr>
+<td>└─lockTime</td>
+<td>string</td>
+<td>liquidation lock time</td>
+</tr>
+<tr>
+<td>└─positionAmount</td>
+<td>bigdecimal</td>
+<td>Total position value (full) multiplied by face value</td>
+</tr>
+<tr>
+<td>└─positionCloseAmount</td>
+<td>bigdecimal</td>
+<td>Total closing value (full amount) multiplied by face value</td>
+</tr>
+<tr>
+<td>└─longAccountCount</td>
+<td>int</td>
+<td>Number of multiple positions</td>
+</tr>
+<tr>
+<td>└─shortAccountCount</td>
+<td>int</td>
+<td>Number of open positions</td>
+</tr>
+<tr>
+<td>└─sumRealized</td>
+<td>bigdecimal</td>
+<td>The total realized profit and loss of this settlement cycle</td>
+</tr>
+<tr>
+<td>└─deficitLosses</td>
+<td>bigdecimal</td>
+<td>Customer account deficit at position settlement</td>
+</tr>
+<tr>
+<td>└─currentMarginRate</td>
+<td>bigdecimal</td>
+<td>Current margin ratio</td>
+</tr>
+<tr>
+<td>└─realEquity</td>
+<td>bigdecimal</td>
+<td>Balance occupied by current contracts, excluding realized and unrealized gains and losses</td>
+</tr>
+<tr>
+<td>└─usingAccountType</td>
+<td>int</td>
+<td>Type of account used (0: contract, 1: with order, 2: Documentary)</td>
+</tr>
+<tr>
+<td>└─coPositionExt</td>
+<td>object</td>
+<td>Position extension information</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└─positionId</td>
+<td>int</td>
+<td>Location ID, associated with the location list id, primary key</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└─copyTraderUid</td>
+<td>int</td>
+<td>Merchandiser uid</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└─shareTraderUid</td>
+<td>int</td>
+<td>With single member uid</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└─sharePositionId</td>
+<td>int</td>
+<td>With a single warehouse id</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└─shareRoyaltyRatio</td>
+<td>double</td>
+<td>Proportion of moistening 0-1</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└─preShareRoyaltyAmount</td>
+<td>bigdecimal</td>
+<td>Advance the amount of money</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└─lockPreShareRoyaltyAmount</td>
+<td>bigdecimal</td>
+<td>Actual freezing of the amount of advance</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└─copyStatus</td>
+<td>int</td>
+<td>Documentary status (1: normal, 2: failed to add warehouse receipt, 3: failed to balance warehouse receipt)</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└─shareRoyaltyStatus</td>
+<td>int</td>
+<td>Moistening status (0: open position, 1: to be moistened, 2: moistened, 3: unmoistened)</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└─closePositionType</td>
+<td>int</td>
+<td>Merchandiser closing type (0: open position, 1: follow trader closing, 2: manual closing, 3: forced closing)</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└─ctime</td>
+<td>string</td>
+<td>create time</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└─mtime</td>
+<td>string</td>
+<td>update time</td>
+</tr>
+</tbody></table>

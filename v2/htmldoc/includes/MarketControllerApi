@@ -1,0 +1,310 @@
+<h2 id='order-book'>Order Book</h2><div class="highlight"><pre class="highlight plaintext"><code>curl -X GET -i /fapi/v1/depth
+</code></pre></div>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"bids"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">[</span><span class="w">
+      </span><span class="s2">"3.90000000"</span><span class="p">,</span><span class="w">
+      </span><span class="err">//</span><span class="w"> </span><span class="err">price</span><span class="w">
+      </span><span class="s2">"431.00000000"</span><span class="w">
+      </span><span class="err">//</span><span class="w"> </span><span class="err">quantity</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="p">[</span><span class="w">
+      </span><span class="s2">"4.00000000"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"431.00000000"</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+  </span><span class="p">],</span><span class="w">
+  </span><span class="nl">"asks"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">[</span><span class="w">
+      </span><span class="s2">"4.00000200"</span><span class="p">,</span><span class="w">
+      </span><span class="err">//</span><span class="w"> </span><span class="err">price</span><span class="w">
+      </span><span class="s2">"12.00000000"</span><span class="w">
+      </span><span class="err">//</span><span class="w"> </span><span class="err">quantity</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="p">[</span><span class="w">
+      </span><span class="s2">"5.10000000"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"28.00000000"</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p><strong>URL:</strong> <code>/fapi/v1/depth</code></p>
+
+<p><strong>Type:</strong> <code>GET</code></p>
+
+<p><strong>Content-Type:</strong> <code>application/x-www-form-urlencoded;charset=UTF-8</code></p>
+
+<p><strong>Description:</strong> Order Book</p>
+
+<p><strong>Query-parameters:</strong></p>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>contractName</td>
+<td>string</td>
+<td>true</td>
+<td>Contract Name E.g. E-BTC-USDT</td>
+</tr>
+<tr>
+<td>limit</td>
+<td>string</td>
+<td>integer</td>
+<td>Default 100, Max 100</td>
+</tr>
+</tbody></table>
+
+<p><strong>Response-fields:</strong></p>
+
+<table><thead>
+<tr>
+<th>name</th>
+<th>type</th>
+<th>example</th>
+<th>description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>time</td>
+<td>long</td>
+<td>1595563624731</td>
+<td>Current Timestamp  (ms)</td>
+</tr>
+<tr>
+<td>bids</td>
+<td>list</td>
+<td>Look below</td>
+<td>Order book purchase info</td>
+</tr>
+<tr>
+<td>asks</td>
+<td>list</td>
+<td>Look below</td>
+<td>Order book selling info</td>
+</tr>
+</tbody></table>
+
+<p>The fields bids and asks are lists of order book price level entries, sorted from best to worst.</p>
+
+<table><thead>
+<tr>
+<th>name</th>
+<th>type</th>
+<th>example</th>
+<th>description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>&#39; &#39;</td>
+<td>float</td>
+<td>131.1</td>
+<td>price level</td>
+</tr>
+<tr>
+<td>&#39; &#39;</td>
+<td>float</td>
+<td>2.3</td>
+<td>Total order quantity for this price level</td>
+</tr>
+</tbody></table>
+<h2 id='ticker'>ticker</h2><div class="highlight"><pre class="highlight plaintext"><code>curl -X GET -i /fapi/v1/ticker
+</code></pre></div>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"high"</span><span class="p">:</span><span class="w"> </span><span class="s2">"9279.0301"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"vol"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1302"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"last"</span><span class="p">:</span><span class="w"> </span><span class="s2">"9200"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"low"</span><span class="p">:</span><span class="w"> </span><span class="s2">"9279.0301"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"rose"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"time"</span><span class="p">:</span><span class="w"> </span><span class="mi">1595563624731</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<blockquote>
+<p>24 hour price change statistics:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"high"</span><span class="p">:</span><span class="w"> </span><span class="s2">"9279.0301"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"vol"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1302"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"last"</span><span class="p">:</span><span class="w"> </span><span class="s2">"9200"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"low"</span><span class="p">:</span><span class="w"> </span><span class="s2">"9279.0301"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"rose"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"time"</span><span class="p">:</span><span class="w"> </span><span class="mi">1595563624731</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p><strong>URL:</strong> <code>/fapi/v1/ticker</code></p>
+
+<p><strong>Type:</strong> <code>GET</code></p>
+
+<p><strong>Content-Type:</strong> <code>application/x-www-form-urlencoded;charset=UTF-8</code></p>
+
+<p><strong>Description:</strong> ticker</p>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>contractName</td>
+<td>string</td>
+<td>true</td>
+<td>Contract Name E.g. E-BTC-USDT</td>
+</tr>
+</tbody></table>
+
+<p><strong>Response-fields:</strong></p>
+
+<table><thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>time</td>
+<td>long</td>
+<td>Open time</td>
+</tr>
+<tr>
+<td>high</td>
+<td>float</td>
+<td>Higher price</td>
+</tr>
+<tr>
+<td>low</td>
+<td>float</td>
+<td>Lower price</td>
+</tr>
+<tr>
+<td>last</td>
+<td>float</td>
+<td>Newest price</td>
+</tr>
+<tr>
+<td>vol</td>
+<td>float</td>
+<td>Trade volume</td>
+</tr>
+<tr>
+<td>rose</td>
+<td>string</td>
+<td>Price variation</td>
+</tr>
+</tbody></table>
+<h2 id='kline-candlestick-data'>Kline/Candlestick Data</h2><div class="highlight"><pre class="highlight plaintext"><code>curl -X GET -i /fapi/v1/klines
+</code></pre></div>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"high"</span><span class="p">:</span><span class="w"> </span><span class="s2">"6228.77"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"vol"</span><span class="p">:</span><span class="w"> </span><span class="s2">"111"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"low"</span><span class="p">:</span><span class="w"> </span><span class="s2">"6228.77"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"idx"</span><span class="p">:</span><span class="w"> </span><span class="mi">1594640340</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"close"</span><span class="p">:</span><span class="w"> </span><span class="s2">"6228.77"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"open"</span><span class="p">:</span><span class="w"> </span><span class="s2">"6228.77"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"high"</span><span class="p">:</span><span class="w"> </span><span class="s2">"6228.77"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"vol"</span><span class="p">:</span><span class="w"> </span><span class="s2">"222"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"low"</span><span class="p">:</span><span class="w"> </span><span class="s2">"6228.77"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"idx"</span><span class="p">:</span><span class="w"> </span><span class="mi">1587632160</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"close"</span><span class="p">:</span><span class="w"> </span><span class="s2">"6228.77"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"open"</span><span class="p">:</span><span class="w"> </span><span class="s2">"6228.77"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"high"</span><span class="p">:</span><span class="w"> </span><span class="s2">"6228.77"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"vol"</span><span class="p">:</span><span class="w"> </span><span class="s2">"333"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"low"</span><span class="p">:</span><span class="w"> </span><span class="s2">"6228.77"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"idx"</span><span class="p">:</span><span class="w"> </span><span class="mi">1587632100</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"close"</span><span class="p">:</span><span class="w"> </span><span class="s2">"6228.77"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"open"</span><span class="p">:</span><span class="w"> </span><span class="s2">"6228.77"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre></div>
+<p><strong>URL:</strong> <code>/fapi/v1/klines</code></p>
+
+<p><strong>Type:</strong> <code>GET</code></p>
+
+<p><strong>Content-Type:</strong> <code>application/x-www-form-urlencoded;charset=UTF-8</code></p>
+
+<p><strong>Description:</strong> Kline/Candlestick Data</p>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>contractName</td>
+<td>string</td>
+<td>true</td>
+<td>Contract Name E.g. E-BTC-USDT</td>
+</tr>
+<tr>
+<td>interval</td>
+<td>string</td>
+<td>true</td>
+<td>identifies the sent value as: 1min,5min,15min,30min,1h,1day,1week,1month</td>
+</tr>
+<tr>
+<td>limit</td>
+<td>integer</td>
+<td>false</td>
+<td>Default 100, Max 300</td>
+</tr>
+</tbody></table>
+
+<p><strong>Response-fields:</strong></p>
+
+<table><thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>idx</td>
+<td>long</td>
+<td>Start timestamp(ms)</td>
+</tr>
+<tr>
+<td>high</td>
+<td>float</td>
+<td>Higher price</td>
+</tr>
+<tr>
+<td>low</td>
+<td>float</td>
+<td>Lower price</td>
+</tr>
+<tr>
+<td>close</td>
+<td>float</td>
+<td>close price</td>
+</tr>
+<tr>
+<td>vol</td>
+<td>float</td>
+<td>Trade volume</td>
+</tr>
+</tbody></table>
