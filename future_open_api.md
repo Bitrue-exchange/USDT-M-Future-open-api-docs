@@ -363,10 +363,10 @@ public market data
 
 | name                    | type              | example                  | description                          |
 | ----------------------- | ----------------- | ------------------------ | ------------------------------------ |
-| currentFundRate                    | long              | 1595563624731            | Open time                            |
-| indexPrice                    | float             | 9900                     | Higher price                         |
-| remainingSecond                     | float             | 8800.34                  | Lower price                          |
-| tagPrice                    | float             | 8900                     | Newest price                         | 
+| currentFundRate                    | float              | 00010112            | Funding Fee                            |
+| indexPrice                    | float             | 26441.43                     | index price                         |
+| remainingSecond                     | int             | 5205                  | remaining second to funding fee payfor                          |
+| tagPrice                    | float             | 26435.6                     | markprice                         | 
 
 
 
