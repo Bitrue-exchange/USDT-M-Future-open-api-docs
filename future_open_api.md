@@ -82,7 +82,7 @@ if (timestamp < (serverTime + 1000) && (serverTime - timestamp) <= recvWindow) {
 
 * **It recommended to use a small recvWindow of 5000 or less!**
 
-## SIGNED Endpoint Examples for POST /sapi/v1/order
+## SIGNED Endpoint Examples for POST /fapi/v1/order
 
 Here is a step-by-step example of how to send a vaild signed payload from the Linux command line using `echo`, `openssl`, and `curl`.
 
@@ -337,6 +337,37 @@ The fields bids and asks are lists of order book price level entries, sorted fro
 | last                    | float             | 8900                     | Newest price                         | 
 | vol                     | float             | 4999                     | Trade volume                         |
 | rose                    | string            | +0.5                     | Price variation                      |
+
+
+#### /fapi/v1/index
+
+public market data
+
+###### Parameters
+
+| name                  | type          | memo                                    |
+| --------------------- | ------------- | --------------------------------------- |
+| Contract name         |  string       |  Contract Name E.g. E-BTC-USDT          |
+
+###### Response
+
+``` json
+{
+  "currentFundRate": 0.00010112,
+  "indexPrice": 26441.43,
+  "remainingSecond": 5205,
+  "tagPrice": 26435.6,
+  "nextFundRate": 0
+}
+```
+
+| name                    | type              | example                  | description                          |
+| ----------------------- | ----------------- | ------------------------ | ------------------------------------ |
+| currentFundRate                    | long              | 1595563624731            | Open time                            |
+| indexPrice                    | float             | 9900                     | Higher price                         |
+| remainingSecond                     | float             | 8800.34                  | Lower price                          |
+| tagPrice                    | float             | 8900                     | Newest price                         | 
+
 
 
 
