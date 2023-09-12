@@ -1,0 +1,284 @@
+<h1 id='user-data-streams'>User Data Streams</h1>
+<ul>
+<li>The base API endpoint is: <code>https://fapiws-auth.bitrue.com</code></li>
+<li>A User Data Stream listenKey is valid for 30 minutes after creation.</li>
+<li>API-keys are passed into the API via the <code>X-CH-APIKEY</code> header.</li>
+<li>API-keys are passed into the API via the <code>X-CH-SIGN</code> header. It is based on timestamp + method + requestPath + body string (+ means string connection) as the operation object</li>
+<li>The value of timestamp is the same as the <code>X-CH-TS</code> request header, method is the request method, and the letters are all uppercase: GET/POST</li>
+<li>Doing a PUT on a listenKey will extend its validity for 30 minutes.</li>
+<li>Doing a DELETE on a listenKey will close the stream and invalidate the listenKey.</li>
+<li>Doing a POST on an account with an active listenKey will return the currently active listenKey and extend its validity for 30 minutes.</li>
+<li>A listenKey is a stream.</li>
+<li>Users can listen to multiple streams.</li>
+<li>The base websocket endpoint is: <code>wss://fapiws.bitrue.com</code></li>
+<li>User Data Streams are accessed at <code>/stream?streams=&lt;listenKey&gt;</code></li>
+</ul>
+<h2 id='signature-generation'>Signature generation</h2><h4 id='timing-security'>Timing Security</h4>
+<ul>
+<li>The signature interface needs to pass the timestamp in the <code>X-CH-TS</code> field in the HTTP header, and its value should be the unix timestamp of the request sending time e.g. <code>1528394129373</code></li>
+<li>An additional parameter, <code>recvWindow</code>, may be sent to specify the number of milliseconds after timestamp the request is valid for. If <code>recvWindow</code> is not sent, <strong>it defaults to 5000</strong>.</li>
+<li>In addition, if the server calculates that the client&#39;s timestamp is more than one second ‘in the future’ of the server’s time, it will also reject the request.</li>
+<li>The logic is as follows:</li>
+</ul>
+<div class="highlight"><pre class="highlight java tab-java"><code><span class="k">if</span> <span class="o">(</span><span class="n">timestamp</span> <span class="o">&lt;</span> <span class="o">(</span><span class="n">serverTime</span> <span class="o">+</span> <span class="mi">1000</span><span class="o">)</span> <span class="o">&amp;&amp;</span> <span class="o">(</span><span class="n">serverTime</span> <span class="o">-</span> <span class="n">timestamp</span><span class="o">)</span> <span class="o">&lt;=</span> <span class="n">recvWindow</span><span class="o">)</span> <span class="o">{</span>
+  <span class="c1">// process request</span>
+<span class="o">}</span> <span class="k">else</span> <span class="o">{</span>
+  <span class="c1">// reject request</span>
+<span class="o">}</span>
+</code></pre></div>
+<ul>
+<li>Serious trading is about timing.  Networks can be unstable and unreliable, which can lead to requests taking varying amounts of time to reach the servers. With recvWindow, you can specify that the request must be processed within a certain number of milliseconds or be rejected by the server.</li>
+</ul>
+
+<p><strong>It recommended to use a small recvWindow of 5000 or less!</strong></p>
+<h4 id='signed-endpoint-examples-for-post-sapi-v1-order'>SIGNED Endpoint Examples for POST /sapi/v1/order</h4>
+<p>Here is a step-by-step example of how to send a vaild signed payload from the Linux command line using <code>echo</code>, <code>openssl</code>, and <code>curl</code>.</p>
+
+<table><thead>
+<tr>
+<th>Key</th>
+<th>Value</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>apiKey</td>
+<td>vmPUZE6mv9SD5V5e14y7Ju91duEh8A</td>
+</tr>
+<tr>
+<td>secretKey</td>
+<td>902ae3cb34ecee2779aa4d3e1d226686</td>
+</tr>
+</tbody></table>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Value</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>symbol</td>
+<td>BTCUSDT</td>
+</tr>
+<tr>
+<td>side</td>
+<td>BUY</td>
+</tr>
+<tr>
+<td>type</td>
+<td>LIMIT</td>
+</tr>
+<tr>
+<td>volume</td>
+<td>1</td>
+</tr>
+<tr>
+<td>price</td>
+<td>9300</td>
+</tr>
+</tbody></table>
+<h4 id='signature-example'>Signature example</h4>
+<ul>
+<li>body:</li>
+</ul>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="nl">"symbol"</span><span class="p">:</span><span class="s2">"BTCUSDT"</span><span class="p">,</span><span class="nl">"price"</span><span class="p">:</span><span class="s2">"9300"</span><span class="p">,</span><span class="nl">"volume"</span><span class="p">:</span><span class="s2">"1"</span><span class="p">,</span><span class="nl">"side"</span><span class="p">:</span><span class="s2">"BUY"</span><span class="p">,</span><span class="nl">"type"</span><span class="p">:</span><span class="s2">"LIMIT"</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<ul>
+<li>HMAC SHA256 Signature:</li>
+</ul>
+<div class="highlight"><pre class="highlight shell tab-shell"><code><span class="o">[</span>linux]<span class="nv">$ </span><span class="nb">echo</span> <span class="nt">-n</span> <span class="s2">"1588591856950POST/sapi/v1/order/test{</span><span class="se">\"</span><span class="s2">symbol</span><span class="se">\"</span><span class="s2">:</span><span class="se">\"</span><span class="s2">BTCUSDT</span><span class="se">\"</span><span class="s2">,</span><span class="se">\"</span><span class="s2">price</span><span class="se">\"</span><span class="s2">:</span><span class="se">\"</span><span class="s2">9300</span><span class="se">\"</span><span class="s2">,</span><span class="se">\"</span><span class="s2">volume</span><span class="se">\"</span><span class="s2">:</span><span class="se">\"</span><span class="s2">1</span><span class="se">\"</span><span class="s2">,</span><span class="se">\"</span><span class="s2">side</span><span class="se">\"</span><span class="s2">:</span><span class="se">\"</span><span class="s2">BUY</span><span class="se">\"</span><span class="s2">,</span><span class="se">\"</span><span class="s2">type</span><span class="se">\"</span><span class="s2">:</span><span class="se">\"</span><span class="s2">LIMIT</span><span class="se">\"</span><span class="s2">}"</span> | openssl dgst <span class="nt">-sha256</span> <span class="nt">-hmac</span> <span class="s2">"902ae3cb34ecee2779aa4d3e1d226686"</span>
+<span class="o">(</span>stdin<span class="o">)=</span> c50d0a74bb9427a9a03933d0eded03af9bf50115dc5b706882a4fcf07a26b761
+</code></pre></div>
+<ul>
+<li>Curl command :
+<code>shell
+[linux]$ curl -H &quot;X-CH-APIKEY: c3b165fd5218cdd2c2874c65da468b1e&quot; -H &quot;X-CH-SIGN: c50d0a74bb9427a9a03933d0eded03af9bf50115dc5b706882a4fcf07a26b761&quot; -H &quot;X-CH-TS: 1588591856950&quot; -H &quot;Content-Type:application/json&quot; -X POST &#39;http://localhost:30000/sapi/v1/order/test&#39; -d &#39;{&quot;symbol&quot;:&quot;BTCUSDT&quot;,&quot;price&quot;:&quot;9300&quot;,&quot;quantity&quot;:&quot;1&quot;,&quot;side&quot;:&quot;BUY&quot;,&quot;type&quot;:&quot;LIMIT&quot;}&#39;
+</code></li>
+</ul>
+<h2 id='error-codes'>Error Codes</h2>
+<p>Errors consist of two parts:
+an error code and a message.
+Codes are universal, but messages can vary.</p>
+
+<table><thead>
+<tr>
+<th>code</th>
+<th>description</th>
+<th>memo</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>200</td>
+<td>SUCCESS</td>
+<td>200 for success,others are error codes.</td>
+</tr>
+<tr>
+<td>503</td>
+<td>SERVICE_ERROR</td>
+<td>An unknown error occurred while processing the request.</td>
+</tr>
+<tr>
+<td>1022</td>
+<td>INVALID_API_KEY</td>
+<td>You are not authorized to execute this request.</td>
+</tr>
+<tr>
+<td>1102</td>
+<td>MANDATORY_PARAM_EMPTY_OR_MALFORMED</td>
+<td>A mandatory parameter was not sent, was empty/null, or malformed.</td>
+</tr>
+<tr>
+<td>-1150</td>
+<td>INVALID_LISTEN_KEY</td>
+<td>This listenKey does not exist.</td>
+</tr>
+</tbody></table>
+<h2 id='listenkey'>ListenKey</h2><h4 id='create-a-listenkey-user_stream'>CREATE A LISTENKEY (USER_STREAM)</h4>
+<ul>
+<li>url</li>
+</ul>
+
+<p><code>POST /user_stream/api/v1/listenKey</code></p>
+
+<p>Start a new user data stream. The stream will close after 60 minutes unless a keepalive is sent. If the account has an active listenKey, that listenKey will be returned and its validity will be extended for 60 minutes.</p>
+
+<ul>
+<li>Response:</li>
+</ul>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"msg"</span><span class="p">:</span><span class="w"> </span><span class="s2">"succ"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"data"</span><span class="p">:</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"listenKey"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ac3abbc8ac18f7977df42de27ab0c87c1f4ea3919983955d2fb5786468ccdb07"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div><h4 id='ping-keep-alive-a-listenkey-user_stream'>Ping/Keep-alive a ListenKey (USER_STREAM)</h4>
+<ul>
+<li>url</li>
+</ul>
+
+<p><code>PUT /user_stream/api/v1/listenKey/{listenKey}</code></p>
+
+<p>Keep alive a user data stream to prevent a time out. User data streams will close after 60 minutes. It&#39;s recommended to send a ping about every 30 minutes.</p>
+
+<ul>
+<li>Response:</li>
+</ul>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"msg"</span><span class="p">:</span><span class="w"> </span><span class="s2">"succ"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div><h4 id='close-a-listenkey-user_stream'>Close a ListenKey (USER_STREAM)</h4>
+<ul>
+<li>url</li>
+</ul>
+
+<p><code>DELETE /user_stream/api/v1/listenKey/{listenKey}</code></p>
+
+<p>Close out a user data stream.</p>
+
+<ul>
+<li>Response:</li>
+</ul>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"msg"</span><span class="p">:</span><span class="w"> </span><span class="s2">"succ"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div><h2 id='keep-alive-websocket'>keep-alive(websocket)</h2>
+<p>you should send pong message after receive a <code>ping</code> message.</p>
+
+<ul>
+<li><p>ping:
+<code>json
+{&quot;event&quot;:&quot;ping&quot;,&quot;ts&quot;:&quot;1635221621062&quot;}
+</code></p></li>
+<li><p>pong：</p></li>
+</ul>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="nl">"event"</span><span class="p">:</span><span class="s2">"pong"</span><span class="p">,</span><span class="nl">"ts"</span><span class="p">:</span><span class="s2">"1635221621062"</span><span class="p">}</span><span class="w">
+</span></code></pre></div><h2 id='user-stream'>User stream</h2>
+<p>User Account stream <strong>subscribe：</strong>
+<code>
+{&quot;event&quot;:&quot;sub&quot;,&quot;params&quot;:{&quot;channel&quot;:&quot;user_account_update&quot;}}
+</code>
+<strong>response：</strong></p>
+
+<p>sub success :
+<code>
+{&quot;event&quot;:&quot;user_account_update&quot;,&quot;status&quot;:&quot;ok&quot;,&quot;ts&quot;:1689568979259}
+</code></p>
+<h2 id='payload'>payload</h2><h4 id='order-event'>order event :</h4><div class="highlight"><pre class="highlight plaintext"><code>{
+    "e": "ORDER_TRADE_UPDATE", // Event type
+    "E": 1568879465651, // Event time (timestamp)
+    "o": {
+        "s": "BTCUSDT", // Trading pair
+        "c": "TEST", // Client-provided order ID
+        "S": "SELL", // Order direction
+        "o": "MARKET", // Order type (MARKET|LIMIT|IOC|POST_ONLY...)
+        "q": "0.001", // Original order quantity (multiplied by face value)
+        "p": "0", // Original order price
+        "ap": "0", // Average order price (price after execution)
+        "x": "NEW", // Specific execution type for this event (new, liquidation, trade, cancel, adl)
+        "X": "NEW", // Current status of the order (status)
+        "i": 8886774, // Order ID
+        "l": "0", // Order quantity filled in the current event
+        "z": "0", // Cumulative filled order quantity
+        "L": "0", // Price at which the order was filled in the current event
+        "N": "USDT", // Fee asset type
+        "n": "0", // Fee amount (total fee)
+        "T": 1568879465650, // Trade time
+        "t": 0, // Trade ID
+        "m": false, // Was this trade a maker or taker? (make, take) Reserved field
+        "R": false, // Is this a reduce-only order? (default false) Reserved field
+        "ps": "LONG", // Position direction (long if present, short if empty)
+        "rp": "0" // Realized profit or loss for this trade (current P&amp;L)
+    }
+}
+</code></pre></div>
+<p>Orders are updated with the executionReport event.</p>
+
+<p>Execution types(<code>x</code>):</p>
+
+<ul>
+<li>NEW - The order has been accepted into the engine.</li>
+<li>CANCELED - The order has been canceled by the user.</li>
+<li>TRADE - Part of the order or all of the order&#39;s quantity has filled.</li>
+<li>LIQUIDATION - force liquidation when the position under</li>
+</ul>
+<h4 id='acount-event'>acount event</h4><div class="highlight"><pre class="highlight plaintext"><code>{
+    "e": "ACCOUNT_UPDATE", // Event type
+    "E": 1564745798939, // Event time
+    "T": 1564745798938, // Matching time (tentative)
+    "a": // Account update event
+    {
+        "m": "ORDER", // Event trigger reason (enum: see table)
+        "B": [ // Balance information
+            {
+                "a": "USDT", // Asset name
+                "cw": "122624.12345678", // Cross-margin balance
+                "lb": "0.000", // Locked balance
+                "iw": "100.12345678", // Isolated margin wallet balance
+                "bc": "50.12345678" // Balance change not related to profit and loss or trading fees
+            }, // Only send relevant account balances.
+            {
+                "a": "BUSD",
+                "cw": "122624.12345678",
+                "lb": "0.0000",
+                "iw": "100.12345678",
+                "bc": "50.12345678"
+            }
+        ],
+        "P": [{
+            "s": "BTCUSDT", // Trading pair
+            "pa": "0", // Position amount
+            "ep": "0.00000", // Entry price
+            "lp": "28343.33", // Last settlement price
+            "cr": "200", // Cumulative realized profit and loss (history_realized_amount) including fees
+            "up": "0", // Unrealized profit and loss for the position (lp -&gt; current)
+            "mt": "1", // Margin type, position type (1 Cross, 2 Isolated)
+            "iw": "0.00000000", // If isolated, isolated margin for the position
+            "ps": "SHORT|LONG" // Position direction (SHORT|LONG)
+        }]
+    }
+}
+</code></pre></div>

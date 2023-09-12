@@ -17,7 +17,7 @@ curl -X GET -i /fapi/v1/ping
 **Type:** `GET`
 
 
-**Content-Type:** `application/x-www-form-urlencoded;charset=UTF-8`
+**Content-Type:** `application/json`
 
 **Description:** Test Connectivity PING
 
@@ -41,7 +41,7 @@ curl -X GET -i /fapi/v1/time
 **Type:** `GET`
 
 
-**Content-Type:** `application/x-www-form-urlencoded;charset=UTF-8`
+**Content-Type:** `application/json`
 
 **Description:** Check Server Time
 
@@ -91,15 +91,15 @@ curl -X GET -i /fapi/v1/contracts
 **Type:** `GET`
 
 
-**Content-Type:** `application/x-www-form-urlencoded;charset=UTF-8`
+**Content-Type:** `application/json`
 
 **Description:** Current open contract
 
 **Query-parameters:**
 
-| Parameter | Type | Required | Description |
-|-----------|------|----------|-------------|
-|contractName|string|true|Contract Name E.g. E-BTC-USD|-|
+| Parameter | Type | Required | Description                   |
+|-----------|------|----------|-------------------------------|
+|contractName|string|true| Contract Name E.g. E-BTC-USDT |-|
 
 
 

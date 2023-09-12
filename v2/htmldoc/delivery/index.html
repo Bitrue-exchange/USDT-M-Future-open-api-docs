@@ -296,7 +296,7 @@
     </script>
   </head>
 
-  <body class="delivery delivery_index" data-languages="[&quot;demo&quot;]">
+  <body class="delivery delivery_index" data-languages="[&quot;demo&quot;,&quot;java&quot;,&quot;shell&quot;]">
     <header>
       <div class="flex_box">
         <a href="https://www.bitrue.com" class="LG" id="LG">
@@ -316,7 +316,7 @@
           </span>
 
           <span class="nav_cell nav_tab">
-              <a href="../futures/index.html" id="btn_spot" class="">USDT Futures</a>
+              <a href="../futures/index.html" id="btn_spot" class="">USDⓈ-M Futures</a>
           </span>
 
           <span class="nav_cell nav_tab">
@@ -336,6 +336,8 @@
     <div class="toc-wrapper">
         <div class="lang-selector">
               <a href="#" data-language-name="demo">demo</a>
+              <a href="#" data-language-name="java">java</a>
+              <a href="#" data-language-name="shell">shell</a>
         </div>
         <div class="search search-wrap">
           <input type="text" class="search" id="input-search" placeholder="Search">
@@ -411,7 +413,7 @@
               </ul>
           </li>
           <li>
-            <a href="#coin-m-futures-order" class="toc-h1 toc-link" data-title="COIN-M Futures:order">COIN-M Futures:order<span class="arrow-icon"></span></a>
+            <a href="#order" class="toc-h1 toc-link" data-title="order">order<span class="arrow-icon"></span></a>
               <ul class="toc-list-h2">
                   <li>
                     <a href="#account-trade-list-user_data-hmac-sha256" class="toc-h2 toc-link" data-title="Account Trade List (USER_DATA)(HMAC SHA256)">Account Trade List (USER_DATA)(HMAC SHA256)</a>
@@ -440,7 +442,7 @@
               </ul>
           </li>
           <li>
-            <a href="#coin-m-futures-user" class="toc-h1 toc-link" data-title="COIN-M Futures:user">COIN-M Futures:user<span class="arrow-icon"></span></a>
+            <a href="#user" class="toc-h1 toc-link" data-title="user">user<span class="arrow-icon"></span></a>
               <ul class="toc-list-h2">
                   <li>
                     <a href="#account-information-v2-user_data-hmac-sha256" class="toc-h2 toc-link" data-title="Account Information V2 (USER_DATA)(HMAC SHA256)">Account Information V2 (USER_DATA)(HMAC SHA256)</a>
@@ -463,15 +465,34 @@
               </ul>
           </li>
           <li>
-            <a href="#error-code-list" class="toc-h1 toc-link" data-title="Error code list">Error code list<span class="arrow-icon"></span></a>
+            <a href="#user-data-streams" class="toc-h1 toc-link" data-title="User Data Streams">User Data Streams<span class="arrow-icon"></span></a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#signature-generation" class="toc-h2 toc-link" data-title="Signature generation">Signature generation</a>
+                  </li>
+                  <li>
+                    <a href="#error-codes" class="toc-h2 toc-link" data-title="Error Codes">Error Codes</a>
+                  </li>
+                  <li>
+                    <a href="#listenkey" class="toc-h2 toc-link" data-title="ListenKey">ListenKey</a>
+                  </li>
+                  <li>
+                    <a href="#keep-alive-websocket" class="toc-h2 toc-link" data-title="keep-alive(websocket)">keep-alive(websocket)</a>
+                  </li>
+                  <li>
+                    <a href="#user-stream" class="toc-h2 toc-link" data-title="User stream">User stream</a>
+                  </li>
+                  <li>
+                    <a href="#payload" class="toc-h2 toc-link" data-title="payload">payload</a>
+                  </li>
+              </ul>
           </li>
           <li>
-            <a href="#errors" class="toc-h1 toc-link" data-title="Errors">Errors<span class="arrow-icon"></span></a>
+            <a href="#error-code-list" class="toc-h1 toc-link" data-title="Error code list">Error code list<span class="arrow-icon"></span></a>
           </li>
       </ul>
         <ul class="toc-footer">
-            <li><a href='#'>Sign Up for a Developer Key</a></li>
-            <li><a href='https://github.com/slatedocs/slate'>Documentation Powered by Slate</a></li>
+            <li><a href='https://www.bitrue.com'>Bitrue Exchange</a></li>
         </ul>
     </div>
     <div class="page-wrapper">
@@ -684,7 +705,7 @@ body:</p>
 
 <p><strong>Type:</strong> <code>GET</code></p>
 
-<p><strong>Content-Type:</strong> <code>application/x-www-form-urlencoded;charset=UTF-8</code></p>
+<p><strong>Content-Type:</strong> <code>application/json</code></p>
 
 <p><strong>Description:</strong> Test Connectivity PING</p>
 <h2 id='check-server-time'>Check Server Time</h2><div class="highlight"><pre class="highlight plaintext"><code>curl -X GET -i /dapi/v1/time
@@ -698,7 +719,7 @@ body:</p>
 
 <p><strong>Type:</strong> <code>GET</code></p>
 
-<p><strong>Content-Type:</strong> <code>application/x-www-form-urlencoded;charset=UTF-8</code></p>
+<p><strong>Content-Type:</strong> <code>application/json</code></p>
 
 <p><strong>Description:</strong> Check Server Time</p>
 
@@ -724,7 +745,7 @@ body:</p>
 </blockquote>
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
   </span><span class="p">{</span><span class="w">
-    </span><span class="nl">"symbol"</span><span class="p">:</span><span class="w"> </span><span class="s2">"H-HT-USDT"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"symbol"</span><span class="p">:</span><span class="w"> </span><span class="s2">"H-HT-USD"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"pricePrecision"</span><span class="p">:</span><span class="w"> </span><span class="mi">8</span><span class="p">,</span><span class="w">
     </span><span class="nl">"side"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
     </span><span class="nl">"maxMarketVolume"</span><span class="p">:</span><span class="w"> </span><span class="mi">100000</span><span class="p">,</span><span class="w">
@@ -745,7 +766,7 @@ body:</p>
 
 <p><strong>Type:</strong> <code>GET</code></p>
 
-<p><strong>Content-Type:</strong> <code>application/x-www-form-urlencoded;charset=UTF-8</code></p>
+<p><strong>Content-Type:</strong> <code>application/json</code></p>
 
 <p><strong>Description:</strong> Current open contract</p>
 
@@ -878,7 +899,7 @@ body:</p>
 
 <p><strong>Type:</strong> <code>GET</code></p>
 
-<p><strong>Content-Type:</strong> <code>application/x-www-form-urlencoded;charset=UTF-8</code></p>
+<p><strong>Content-Type:</strong> <code>application/json</code></p>
 
 <p><strong>Description:</strong> Order Book</p>
 
@@ -989,7 +1010,7 @@ body:</p>
 
 <p><strong>Type:</strong> <code>GET</code></p>
 
-<p><strong>Content-Type:</strong> <code>application/x-www-form-urlencoded;charset=UTF-8</code></p>
+<p><strong>Content-Type:</strong> <code>application/json</code></p>
 
 <p><strong>Description:</strong> ticker</p>
 
@@ -1085,7 +1106,7 @@ body:</p>
 
 <p><strong>Type:</strong> <code>GET</code></p>
 
-<p><strong>Content-Type:</strong> <code>application/x-www-form-urlencoded;charset=UTF-8</code></p>
+<p><strong>Content-Type:</strong> <code>application/json</code></p>
 
 <p><strong>Description:</strong> Kline/Candlestick Data</p>
 
@@ -1101,7 +1122,7 @@ body:</p>
 <td>contractName</td>
 <td>string</td>
 <td>true</td>
-<td>Contract Name E.g. E-BTC-USDT</td>
+<td>Contract Name E.g. E-BTC-USD</td>
 </tr>
 <tr>
 <td>interval</td>
@@ -1152,7 +1173,7 @@ body:</p>
 <td>Trade volume</td>
 </tr>
 </tbody></table>
-<h1 id='coin-m-futures-order'>COIN-M Futures:order</h1><h2 id='account-trade-list-user_data-hmac-sha256'>Account Trade List (USER_DATA)(HMAC SHA256)</h2><div class="highlight"><pre class="highlight plaintext"><code>curl -X GET -i /dapi/v2/myTrades?contractName=E-SAND-USDC&amp;fromId=&amp;limit=10&amp;startTime=&amp;endTime=
+<h1 id='order'>order</h1><h2 id='account-trade-list-user_data-hmac-sha256'>Account Trade List (USER_DATA)(HMAC SHA256)</h2><div class="highlight"><pre class="highlight plaintext"><code>curl -X GET -i /dapi/v2/myTrades?contractName=E-SAND-USD&amp;fromId=&amp;limit=10&amp;startTime=&amp;endTime=
 </code></pre></div>
 <blockquote>
 <p>The above command returns JSON structured like this:</p>
@@ -1166,7 +1187,7 @@ body:</p>
             </span><span class="nl">"price"</span><span class="p">:</span><span class="mf">0.9</span><span class="p">,</span><span class="w">
             </span><span class="nl">"qty"</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span><span class="w">
             </span><span class="nl">"amount"</span><span class="p">:</span><span class="mi">9</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"contractName"</span><span class="p">:</span><span class="s2">"E-SAND-USDC"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"contractName"</span><span class="p">:</span><span class="s2">"E-SAND-USD"</span><span class="p">,</span><span class="w">
             </span><span class="nl">"side"</span><span class="p">:</span><span class="s2">"BUY"</span><span class="p">,</span><span class="w">
             </span><span class="nl">"fee"</span><span class="p">:</span><span class="s2">"0.0018"</span><span class="p">,</span><span class="w">
             </span><span class="nl">"bidId"</span><span class="p">:</span><span class="mi">1558124009467904992</span><span class="p">,</span><span class="w">
@@ -1184,7 +1205,7 @@ body:</p>
 
 <p><strong>Type:</strong> <code>GET</code></p>
 
-<p><strong>Content-Type:</strong> <code>application/x-www-form-urlencoded;charset=UTF-8</code></p>
+<p><strong>Content-Type:</strong> <code>application/json</code></p>
 
 <p><strong>Description:</strong> Account Trade List (USER_DATA)(HMAC SHA256)</p>
 
@@ -1326,7 +1347,7 @@ body:</p>
 </tr>
 </tbody></table>
 <h2 id='modify-isolated-position-margin-trade-hmac-sha256'>Modify Isolated Position Margin (TRADE)(HMAC SHA256)</h2><div class="highlight"><pre class="highlight plaintext"><code>curl -X POST -H 'Content-Type: application/json' -i /dapi/v2/positionMargin --data '{
-    'contractName': 'E-SAND-USDC',
+    'contractName': 'E-SAND-USD',
     'positionMargin': 10
 }'
 </code></pre></div>
@@ -1397,7 +1418,7 @@ body:</p>
 </tr>
 </tbody></table>
 <h2 id='change-initial-leverage-trade-hmac-sha256'>Change Initial Leverage (TRADE)(HMAC SHA256)</h2><div class="highlight"><pre class="highlight plaintext"><code>curl -X POST -H 'Content-Type: application/json' -i /dapi/v2/level_edit --data '{
-    'contractName': 'E-BTC-USDT',
+    'contractName': 'E-BTC-USD',
     'leverage': 10
 }'
 </code></pre></div>
@@ -1467,7 +1488,7 @@ body:</p>
 <td>return data</td>
 </tr>
 </tbody></table>
-<h2 id='current-all-open-orders-user_data-hmac-sha256'>Current All Open Orders (USER_DATA)(HMAC SHA256)</h2><div class="highlight"><pre class="highlight plaintext"><code>curl -X GET -i /dapi/v2/openOrders?contractName=E-SAND-USDC
+<h2 id='current-all-open-orders-user_data-hmac-sha256'>Current All Open Orders (USER_DATA)(HMAC SHA256)</h2><div class="highlight"><pre class="highlight plaintext"><code>curl -X GET -i /dapi/v2/openOrders?contractName=E-SAND-USD
 </code></pre></div>
 <blockquote>
 <p>The above command returns JSON structured like this:</p>
@@ -1496,7 +1517,7 @@ body:</p>
 
 <p><strong>Type:</strong> <code>GET</code></p>
 
-<p><strong>Content-Type:</strong> <code>application/x-www-form-urlencoded;charset=UTF-8</code></p>
+<p><strong>Content-Type:</strong> <code>application/json</code></p>
 
 <p><strong>Description:</strong> Current All Open Orders (USER_DATA)(HMAC SHA256)</p>
 
@@ -1604,7 +1625,7 @@ body:</p>
 </tr>
 </tbody></table>
 <h2 id='cancel-order-trade-hmac-sha256'>Cancel Order (TRADE)(HMAC SHA256)</h2><div class="highlight"><pre class="highlight plaintext"><code>curl -X POST -H 'Content-Type: application/json' -i /dapi/v2/cancel --data '{
-    'contractName': 'E-SAND-USDC', 
+    'contractName': 'E-SAND-USD', 
     'clientOrderId': "",  
     'orderId': 1690615847831143159, 
 }
@@ -1721,7 +1742,7 @@ body:</p>
 
 <p><strong>Type:</strong> <code>GET</code></p>
 
-<p><strong>Content-Type:</strong> <code>application/x-www-form-urlencoded;charset=UTF-8</code></p>
+<p><strong>Content-Type:</strong> <code>application/json</code></p>
 
 <p><strong>Description:</strong> Query Order (USER_DATA)(HMAC SHA256)</p>
 
@@ -1841,7 +1862,7 @@ body:</p>
 </tr>
 </tbody></table>
 <h2 id='new-order-trade-hmac-sha256'>New Order (TRADE)(HMAC SHA256)</h2><div class="highlight"><pre class="highlight plaintext"><code>curl -X POST -H 'Content-Type: application/json' -i /dapi/v2/order --data '{
-    'contractName': 'E-SAND-USDC', 
+    'contractName': 'E-SAND-USD', 
     'clientOrderId': 7993967859, 
     'side': 'BUY', 
     'type': 'LIMIT', 
@@ -1968,7 +1989,7 @@ body:</p>
 <td>Order ID（system generated）</td>
 </tr>
 </tbody></table>
-<h2 id='cancel-all-open-orders-trade-hmac-sha256'>Cancel All Open Orders (TRADE)(HMAC SHA256)</h2><div class="highlight"><pre class="highlight plaintext"><code>curl -X POST -i /dapi/v2/allOpenOrders --data 'contractName=E-BTC-USDT'
+<h2 id='cancel-all-open-orders-trade-hmac-sha256'>Cancel All Open Orders (TRADE)(HMAC SHA256)</h2><div class="highlight"><pre class="highlight plaintext"><code>curl -X POST -i /dapi/v2/allOpenOrders --data 'contractName=E-BTC-USD'
 </code></pre></div>
 <blockquote>
 <p>The above command returns JSON structured like this:</p>
@@ -1983,7 +2004,7 @@ body:</p>
 
 <p><strong>Type:</strong> <code>POST</code></p>
 
-<p><strong>Content-Type:</strong> <code>application/x-www-form-urlencoded;charset=UTF-8</code></p>
+<p><strong>Content-Type:</strong> <code>application/json</code></p>
 
 <p><strong>Description:</strong> Cancel All Open Orders (TRADE)(HMAC SHA256)</p>
 
@@ -2030,7 +2051,7 @@ body:</p>
 <td>return data</td>
 </tr>
 </tbody></table>
-<h1 id='coin-m-futures-user'>COIN-M Futures:user</h1><h2 id='account-information-v2-user_data-hmac-sha256'>Account Information V2 (USER_DATA)(HMAC SHA256)</h2><div class="highlight"><pre class="highlight plaintext"><code>curl -X GET -i /dapi/v2/account
+<h1 id='user'>user</h1><h2 id='account-information-v2-user_data-hmac-sha256'>Account Information V2 (USER_DATA)(HMAC SHA256)</h2><div class="highlight"><pre class="highlight plaintext"><code>curl -X GET -i /dapi/v2/account
 </code></pre></div>
 <blockquote>
 <p>The above command returns JSON structured like this:</p>
@@ -2041,7 +2062,7 @@ body:</p>
     </span><span class="nl">"data"</span><span class="p">:{</span><span class="w">
         </span><span class="nl">"account"</span><span class="p">:[</span><span class="w">
             </span><span class="p">{</span><span class="w">
-                </span><span class="nl">"marginCoin"</span><span class="p">:</span><span class="s2">"USDT"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"marginCoin"</span><span class="p">:</span><span class="s2">"USD"</span><span class="p">,</span><span class="w">
                 </span><span class="nl">"coinPrecious"</span><span class="p">:</span><span class="mi">4</span><span class="p">,</span><span class="w">
                 </span><span class="nl">"accountNormal"</span><span class="p">:</span><span class="mf">1010.4043400372839856</span><span class="p">,</span><span class="w">
                 </span><span class="nl">"accountLock"</span><span class="p">:</span><span class="mf">2.9827889600000006</span><span class="p">,</span><span class="w">
@@ -2063,7 +2084,7 @@ body:</p>
                 </span><span class="p">]</span><span class="w">
             </span><span class="p">},</span><span class="w">
             </span><span class="p">{</span><span class="w">
-                </span><span class="nl">"marginCoin"</span><span class="p">:</span><span class="s2">"USDC"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"marginCoin"</span><span class="p">:</span><span class="s2">"USD"</span><span class="p">,</span><span class="w">
                 </span><span class="nl">"coinPrecious"</span><span class="p">:</span><span class="mi">8</span><span class="p">,</span><span class="w">
                 </span><span class="nl">"accountNormal"</span><span class="p">:</span><span class="mf">9999981.6304078411247375</span><span class="p">,</span><span class="w">
                 </span><span class="nl">"accountLock"</span><span class="p">:</span><span class="mf">1.4950614966</span><span class="p">,</span><span class="w">
@@ -2083,8 +2104,8 @@ body:</p>
                 </span><span class="nl">"positionVos"</span><span class="p">:[</span><span class="w">
                     </span><span class="p">{</span><span class="w">
                         </span><span class="nl">"contractId"</span><span class="p">:</span><span class="mi">62</span><span class="p">,</span><span class="w">
-                        </span><span class="nl">"contractName"</span><span class="p">:</span><span class="s2">"E-BTC-USDC"</span><span class="p">,</span><span class="w">
-                        </span><span class="nl">"contractSymbol"</span><span class="p">:</span><span class="s2">"BTC-USDC"</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"contractName"</span><span class="p">:</span><span class="s2">"E-BTC-USD"</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"contractSymbol"</span><span class="p">:</span><span class="s2">"BTC-USD"</span><span class="p">,</span><span class="w">
                         </span><span class="nl">"adlEnabled"</span><span class="p">:</span><span class="kc">false</span><span class="p">,</span><span class="w">
                         </span><span class="nl">"positions"</span><span class="p">:[</span><span class="w">
                             </span><span class="p">{</span><span class="w">
@@ -2139,7 +2160,7 @@ body:</p>
 
 <p><strong>Type:</strong> <code>GET</code></p>
 
-<p><strong>Content-Type:</strong> <code>application/x-www-form-urlencoded;charset=UTF-8</code></p>
+<p><strong>Content-Type:</strong> <code>application/json</code></p>
 
 <p><strong>Description:</strong> Account Information V2 (USER_DATA)(HMAC SHA256)</p>
 
@@ -2478,7 +2499,7 @@ body:</p>
 <td>update time</td>
 </tr>
 </tbody></table>
-<h2 id='notional-and-leverage-brackets-user_data'>Notional and Leverage Brackets (USER_DATA)</h2><div class="highlight"><pre class="highlight plaintext"><code>curl -X GET -i /dapi/v2/leverageBracket?contractName=E-SAND-USDC
+<h2 id='notional-and-leverage-brackets-user_data'>Notional and Leverage Brackets (USER_DATA)</h2><div class="highlight"><pre class="highlight plaintext"><code>curl -X GET -i /dapi/v2/leverageBracket?contractName=E-SAND-USD
 </code></pre></div>
 <blockquote>
 <p>The above command returns JSON structured like this:</p>
@@ -2487,7 +2508,7 @@ body:</p>
     </span><span class="nl">"code"</span><span class="p">:</span><span class="s2">"0"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"msg"</span><span class="p">:</span><span class="s2">"Success"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"data"</span><span class="p">:{</span><span class="w">
-        </span><span class="nl">"contractName"</span><span class="p">:</span><span class="s2">"E-SAND-USDC"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"contractName"</span><span class="p">:</span><span class="s2">"E-SAND-USD"</span><span class="p">,</span><span class="w">
         </span><span class="nl">"brackets"</span><span class="p">:[</span><span class="w">
             </span><span class="p">{</span><span class="w">
                 </span><span class="nl">"bracket"</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span><span class="w">
@@ -2560,7 +2581,7 @@ body:</p>
 
 <p><strong>Type:</strong> <code>GET</code></p>
 
-<p><strong>Content-Type:</strong> <code>application/x-www-form-urlencoded;charset=UTF-8</code></p>
+<p><strong>Content-Type:</strong> <code>application/json</code></p>
 
 <p><strong>Description:</strong> Notional and Leverage Brackets (USER_DATA)</p>
 
@@ -2642,7 +2663,7 @@ body:</p>
 <td>Maintenance ratio for this bracket</td>
 </tr>
 </tbody></table>
-<h2 id='user-commission-rate-user_data-hmac-sha256'>User Commission Rate (USER_DATA)(HMAC SHA256)</h2><div class="highlight"><pre class="highlight plaintext"><code>curl -X GET -i /dapi/v2/commissionRate?contractName=E-SAND-USDC
+<h2 id='user-commission-rate-user_data-hmac-sha256'>User Commission Rate (USER_DATA)(HMAC SHA256)</h2><div class="highlight"><pre class="highlight plaintext"><code>curl -X GET -i /dapi/v2/commissionRate?contractName=E-SAND-USD
 </code></pre></div>
 <blockquote>
 <p>The above command returns JSON structured like this:</p>
@@ -2651,7 +2672,7 @@ body:</p>
     </span><span class="nl">"code"</span><span class="p">:</span><span class="s2">"0"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"msg"</span><span class="p">:</span><span class="s2">"Success"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"data"</span><span class="p">:{</span><span class="w">
-        </span><span class="nl">"contractName"</span><span class="p">:</span><span class="s2">"E-SAND-USDC"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"contractName"</span><span class="p">:</span><span class="s2">"E-SAND-USD"</span><span class="p">,</span><span class="w">
         </span><span class="nl">"openTakerFeeRate"</span><span class="p">:</span><span class="mf">0.0004</span><span class="p">,</span><span class="w">
         </span><span class="nl">"openMakerFeeRate"</span><span class="p">:</span><span class="mf">0.0002</span><span class="p">,</span><span class="w">
         </span><span class="nl">"closeTakerFeeRate"</span><span class="p">:</span><span class="mf">0.0004</span><span class="p">,</span><span class="w">
@@ -2663,7 +2684,7 @@ body:</p>
 
 <p><strong>Type:</strong> <code>GET</code></p>
 
-<p><strong>Content-Type:</strong> <code>application/x-www-form-urlencoded;charset=UTF-8</code></p>
+<p><strong>Content-Type:</strong> <code>application/json</code></p>
 
 <p><strong>Description:</strong> User Commission Rate (USER_DATA)(HMAC SHA256)</p>
 
@@ -2736,7 +2757,7 @@ body:</p>
 </tr>
 </tbody></table>
 <h2 id='new-future-account-transfer-user_data-hmac-sha256'>New Future Account Transfer (USER_DATA)(HMAC SHA256)</h2><div class="highlight"><pre class="highlight plaintext"><code>curl -X POST -H 'Content-Type: application/json' -i /dapi/v2/futures_transfer --data '{
-    'coinSymbol': 'USDT',
+    'coinSymbol': 'USD',
     'amount': 10,
     'transferType': 'wallet_to_contract'
 }'
@@ -2829,31 +2850,31 @@ body:</p>
     </span><span class="err">'msg':</span><span class="w"> </span><span class="err">'Success'</span><span class="p">,</span><span class="w">
     </span><span class="err">'data':</span><span class="w"> </span><span class="p">[{</span><span class="w">
         </span><span class="err">'transferType':</span><span class="w"> </span><span class="err">'wallet_to_contract'</span><span class="p">,</span><span class="w">
-        </span><span class="err">'symbol':</span><span class="w"> </span><span class="err">'USDT'</span><span class="p">,</span><span class="w">
+        </span><span class="err">'symbol':</span><span class="w"> </span><span class="err">'USD'</span><span class="p">,</span><span class="w">
         </span><span class="err">'amount':</span><span class="w"> </span><span class="mf">1.0</span><span class="p">,</span><span class="w">
         </span><span class="err">'status':</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
         </span><span class="err">'ctime':</span><span class="w"> </span><span class="mi">1685404575000</span><span class="w">
     </span><span class="p">},</span><span class="w"> </span><span class="p">{</span><span class="w">
         </span><span class="err">'transferType':</span><span class="w"> </span><span class="err">'wallet_to_contract'</span><span class="p">,</span><span class="w">
-        </span><span class="err">'symbol':</span><span class="w"> </span><span class="err">'USDT'</span><span class="p">,</span><span class="w">
+        </span><span class="err">'symbol':</span><span class="w"> </span><span class="err">'USD'</span><span class="p">,</span><span class="w">
         </span><span class="err">'amount':</span><span class="w"> </span><span class="mf">3.0</span><span class="p">,</span><span class="w">
         </span><span class="err">'status':</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
         </span><span class="err">'ctime':</span><span class="w"> </span><span class="mi">1685495897000</span><span class="w">
     </span><span class="p">},</span><span class="w"> </span><span class="p">{</span><span class="w">
         </span><span class="err">'transferType':</span><span class="w"> </span><span class="err">'wallet_to_contract'</span><span class="p">,</span><span class="w">
-        </span><span class="err">'symbol':</span><span class="w"> </span><span class="err">'USDT'</span><span class="p">,</span><span class="w">
+        </span><span class="err">'symbol':</span><span class="w"> </span><span class="err">'USD'</span><span class="p">,</span><span class="w">
         </span><span class="err">'amount':</span><span class="w"> </span><span class="mf">566.0</span><span class="p">,</span><span class="w">
         </span><span class="err">'status':</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
         </span><span class="err">'ctime':</span><span class="w"> </span><span class="mi">1685562991000</span><span class="w">
     </span><span class="p">},</span><span class="w"> </span><span class="p">{</span><span class="w">
         </span><span class="err">'transferType':</span><span class="w"> </span><span class="err">'wallet_to_contract'</span><span class="p">,</span><span class="w">
-        </span><span class="err">'symbol':</span><span class="w"> </span><span class="err">'USDT'</span><span class="p">,</span><span class="w">
+        </span><span class="err">'symbol':</span><span class="w"> </span><span class="err">'USD'</span><span class="p">,</span><span class="w">
         </span><span class="err">'amount':</span><span class="w"> </span><span class="mf">66.0</span><span class="p">,</span><span class="w">
         </span><span class="err">'status':</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
         </span><span class="err">'ctime':</span><span class="w"> </span><span class="mi">1685571419000</span><span class="w">
     </span><span class="p">},</span><span class="w"> </span><span class="p">{</span><span class="w">
         </span><span class="err">'transferType':</span><span class="w"> </span><span class="err">'wallet_to_contract'</span><span class="p">,</span><span class="w">
-        </span><span class="err">'symbol':</span><span class="w"> </span><span class="err">'USDT'</span><span class="p">,</span><span class="w">
+        </span><span class="err">'symbol':</span><span class="w"> </span><span class="err">'USD'</span><span class="p">,</span><span class="w">
         </span><span class="err">'amount':</span><span class="w"> </span><span class="mf">3.0</span><span class="p">,</span><span class="w">
         </span><span class="err">'status':</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
         </span><span class="err">'ctime':</span><span class="w"> </span><span class="mi">1685573130000</span><span class="w">
@@ -2864,7 +2885,7 @@ body:</p>
 
 <p><strong>Type:</strong> <code>GET</code></p>
 
-<p><strong>Content-Type:</strong> <code>application/x-www-form-urlencoded;charset=UTF-8</code></p>
+<p><strong>Content-Type:</strong> <code>application/json</code></p>
 
 <p><strong>Description:</strong> Get Future Account transfer History List (USER_DATA)(HMAC SHA256)</p>
 
@@ -2971,7 +2992,7 @@ body:</p>
 <td>create time</td>
 </tr>
 </tbody></table>
-<h2 id='user-39-s-force-orders-user_data'>User&#39;s Force Orders (USER_DATA)</h2><div class="highlight"><pre class="highlight plaintext"><code>curl -X GET -i /dapi/v2/forceOrdersHistory?contractName=E-BTC-USDC
+<h2 id='user-39-s-force-orders-user_data'>User&#39;s Force Orders (USER_DATA)</h2><div class="highlight"><pre class="highlight plaintext"><code>curl -X GET -i /dapi/v2/forceOrdersHistory?contractName=E-BTC-USD
 </code></pre></div>
 <blockquote>
 <p>The above command returns JSON structured like this:</p>
@@ -3016,7 +3037,7 @@ body:</p>
 
 <p><strong>Type:</strong> <code>GET</code></p>
 
-<p><strong>Content-Type:</strong> <code>application/x-www-form-urlencoded;charset=UTF-8</code></p>
+<p><strong>Content-Type:</strong> <code>application/json</code></p>
 
 <p><strong>Description:</strong> User&#39;s Force Orders (USER_DATA)</p>
 
@@ -3343,7 +3364,290 @@ body:</p>
 <td>update time</td>
 </tr>
 </tbody></table>
-<h1 id='error-code-list'>Error code list</h1>
+<h1 id='user-data-streams'>User Data Streams</h1>
+<ul>
+<li>The base API endpoint is: <code>https://fapiws-auth.bitrue.com</code></li>
+<li>A User Data Stream listenKey is valid for 30 minutes after creation.</li>
+<li>API-keys are passed into the API via the <code>X-CH-APIKEY</code> header.</li>
+<li>API-keys are passed into the API via the <code>X-CH-SIGN</code> header. It is based on timestamp + method + requestPath + body string (+ means string connection) as the operation object</li>
+<li>The value of timestamp is the same as the <code>X-CH-TS</code> request header, method is the request method, and the letters are all uppercase: GET/POST</li>
+<li>Doing a PUT on a listenKey will extend its validity for 30 minutes.</li>
+<li>Doing a DELETE on a listenKey will close the stream and invalidate the listenKey.</li>
+<li>Doing a POST on an account with an active listenKey will return the currently active listenKey and extend its validity for 30 minutes.</li>
+<li>A listenKey is a stream.</li>
+<li>Users can listen to multiple streams.</li>
+<li>The base websocket endpoint is: <code>wss://fapiws.bitrue.com</code></li>
+<li>User Data Streams are accessed at <code>/stream?streams=&lt;listenKey&gt;</code></li>
+</ul>
+<h2 id='signature-generation'>Signature generation</h2><h4 id='timing-security'>Timing Security</h4>
+<ul>
+<li>The signature interface needs to pass the timestamp in the <code>X-CH-TS</code> field in the HTTP header, and its value should be the unix timestamp of the request sending time e.g. <code>1528394129373</code></li>
+<li>An additional parameter, <code>recvWindow</code>, may be sent to specify the number of milliseconds after timestamp the request is valid for. If <code>recvWindow</code> is not sent, <strong>it defaults to 5000</strong>.</li>
+<li>In addition, if the server calculates that the client&#39;s timestamp is more than one second ‘in the future’ of the server’s time, it will also reject the request.</li>
+<li>The logic is as follows:</li>
+</ul>
+<div class="highlight"><pre class="highlight java tab-java"><code><span class="k">if</span> <span class="o">(</span><span class="n">timestamp</span> <span class="o">&lt;</span> <span class="o">(</span><span class="n">serverTime</span> <span class="o">+</span> <span class="mi">1000</span><span class="o">)</span> <span class="o">&amp;&amp;</span> <span class="o">(</span><span class="n">serverTime</span> <span class="o">-</span> <span class="n">timestamp</span><span class="o">)</span> <span class="o">&lt;=</span> <span class="n">recvWindow</span><span class="o">)</span> <span class="o">{</span>
+  <span class="c1">// process request</span>
+<span class="o">}</span> <span class="k">else</span> <span class="o">{</span>
+  <span class="c1">// reject request</span>
+<span class="o">}</span>
+</code></pre></div>
+<ul>
+<li>Serious trading is about timing.  Networks can be unstable and unreliable, which can lead to requests taking varying amounts of time to reach the servers. With recvWindow, you can specify that the request must be processed within a certain number of milliseconds or be rejected by the server.</li>
+</ul>
+
+<p><strong>It recommended to use a small recvWindow of 5000 or less!</strong></p>
+<h4 id='signed-endpoint-examples-for-post-sapi-v1-order'>SIGNED Endpoint Examples for POST /sapi/v1/order</h4>
+<p>Here is a step-by-step example of how to send a vaild signed payload from the Linux command line using <code>echo</code>, <code>openssl</code>, and <code>curl</code>.</p>
+
+<table><thead>
+<tr>
+<th>Key</th>
+<th>Value</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>apiKey</td>
+<td>vmPUZE6mv9SD5V5e14y7Ju91duEh8A</td>
+</tr>
+<tr>
+<td>secretKey</td>
+<td>902ae3cb34ecee2779aa4d3e1d226686</td>
+</tr>
+</tbody></table>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Value</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>symbol</td>
+<td>BTCUSDT</td>
+</tr>
+<tr>
+<td>side</td>
+<td>BUY</td>
+</tr>
+<tr>
+<td>type</td>
+<td>LIMIT</td>
+</tr>
+<tr>
+<td>volume</td>
+<td>1</td>
+</tr>
+<tr>
+<td>price</td>
+<td>9300</td>
+</tr>
+</tbody></table>
+<h4 id='signature-example'>Signature example</h4>
+<ul>
+<li>body:</li>
+</ul>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="nl">"symbol"</span><span class="p">:</span><span class="s2">"BTCUSDT"</span><span class="p">,</span><span class="nl">"price"</span><span class="p">:</span><span class="s2">"9300"</span><span class="p">,</span><span class="nl">"volume"</span><span class="p">:</span><span class="s2">"1"</span><span class="p">,</span><span class="nl">"side"</span><span class="p">:</span><span class="s2">"BUY"</span><span class="p">,</span><span class="nl">"type"</span><span class="p">:</span><span class="s2">"LIMIT"</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<ul>
+<li>HMAC SHA256 Signature:</li>
+</ul>
+<div class="highlight"><pre class="highlight shell tab-shell"><code><span class="o">[</span>linux]<span class="nv">$ </span><span class="nb">echo</span> <span class="nt">-n</span> <span class="s2">"1588591856950POST/sapi/v1/order/test{</span><span class="se">\"</span><span class="s2">symbol</span><span class="se">\"</span><span class="s2">:</span><span class="se">\"</span><span class="s2">BTCUSDT</span><span class="se">\"</span><span class="s2">,</span><span class="se">\"</span><span class="s2">price</span><span class="se">\"</span><span class="s2">:</span><span class="se">\"</span><span class="s2">9300</span><span class="se">\"</span><span class="s2">,</span><span class="se">\"</span><span class="s2">volume</span><span class="se">\"</span><span class="s2">:</span><span class="se">\"</span><span class="s2">1</span><span class="se">\"</span><span class="s2">,</span><span class="se">\"</span><span class="s2">side</span><span class="se">\"</span><span class="s2">:</span><span class="se">\"</span><span class="s2">BUY</span><span class="se">\"</span><span class="s2">,</span><span class="se">\"</span><span class="s2">type</span><span class="se">\"</span><span class="s2">:</span><span class="se">\"</span><span class="s2">LIMIT</span><span class="se">\"</span><span class="s2">}"</span> | openssl dgst <span class="nt">-sha256</span> <span class="nt">-hmac</span> <span class="s2">"902ae3cb34ecee2779aa4d3e1d226686"</span>
+<span class="o">(</span>stdin<span class="o">)=</span> c50d0a74bb9427a9a03933d0eded03af9bf50115dc5b706882a4fcf07a26b761
+</code></pre></div>
+<ul>
+<li>Curl command :
+<code>shell
+[linux]$ curl -H &quot;X-CH-APIKEY: c3b165fd5218cdd2c2874c65da468b1e&quot; -H &quot;X-CH-SIGN: c50d0a74bb9427a9a03933d0eded03af9bf50115dc5b706882a4fcf07a26b761&quot; -H &quot;X-CH-TS: 1588591856950&quot; -H &quot;Content-Type:application/json&quot; -X POST &#39;http://localhost:30000/sapi/v1/order/test&#39; -d &#39;{&quot;symbol&quot;:&quot;BTCUSDT&quot;,&quot;price&quot;:&quot;9300&quot;,&quot;quantity&quot;:&quot;1&quot;,&quot;side&quot;:&quot;BUY&quot;,&quot;type&quot;:&quot;LIMIT&quot;}&#39;
+</code></li>
+</ul>
+<h2 id='error-codes'>Error Codes</h2>
+<p>Errors consist of two parts:
+an error code and a message.
+Codes are universal, but messages can vary.</p>
+
+<table><thead>
+<tr>
+<th>code</th>
+<th>description</th>
+<th>memo</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>200</td>
+<td>SUCCESS</td>
+<td>200 for success,others are error codes.</td>
+</tr>
+<tr>
+<td>503</td>
+<td>SERVICE_ERROR</td>
+<td>An unknown error occurred while processing the request.</td>
+</tr>
+<tr>
+<td>1022</td>
+<td>INVALID_API_KEY</td>
+<td>You are not authorized to execute this request.</td>
+</tr>
+<tr>
+<td>1102</td>
+<td>MANDATORY_PARAM_EMPTY_OR_MALFORMED</td>
+<td>A mandatory parameter was not sent, was empty/null, or malformed.</td>
+</tr>
+<tr>
+<td>-1150</td>
+<td>INVALID_LISTEN_KEY</td>
+<td>This listenKey does not exist.</td>
+</tr>
+</tbody></table>
+<h2 id='listenkey'>ListenKey</h2><h4 id='create-a-listenkey-user_stream'>CREATE A LISTENKEY (USER_STREAM)</h4>
+<ul>
+<li>url</li>
+</ul>
+
+<p><code>POST /user_stream/api/v1/listenKey</code></p>
+
+<p>Start a new user data stream. The stream will close after 60 minutes unless a keepalive is sent. If the account has an active listenKey, that listenKey will be returned and its validity will be extended for 60 minutes.</p>
+
+<ul>
+<li>Response:</li>
+</ul>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"msg"</span><span class="p">:</span><span class="w"> </span><span class="s2">"succ"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"data"</span><span class="p">:</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"listenKey"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ac3abbc8ac18f7977df42de27ab0c87c1f4ea3919983955d2fb5786468ccdb07"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div><h4 id='ping-keep-alive-a-listenkey-user_stream'>Ping/Keep-alive a ListenKey (USER_STREAM)</h4>
+<ul>
+<li>url</li>
+</ul>
+
+<p><code>PUT /user_stream/api/v1/listenKey/{listenKey}</code></p>
+
+<p>Keep alive a user data stream to prevent a time out. User data streams will close after 60 minutes. It&#39;s recommended to send a ping about every 30 minutes.</p>
+
+<ul>
+<li>Response:</li>
+</ul>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"msg"</span><span class="p">:</span><span class="w"> </span><span class="s2">"succ"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div><h4 id='close-a-listenkey-user_stream'>Close a ListenKey (USER_STREAM)</h4>
+<ul>
+<li>url</li>
+</ul>
+
+<p><code>DELETE /user_stream/api/v1/listenKey/{listenKey}</code></p>
+
+<p>Close out a user data stream.</p>
+
+<ul>
+<li>Response:</li>
+</ul>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"msg"</span><span class="p">:</span><span class="w"> </span><span class="s2">"succ"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div><h2 id='keep-alive-websocket'>keep-alive(websocket)</h2>
+<p>you should send pong message after receive a <code>ping</code> message.</p>
+
+<ul>
+<li><p>ping:
+<code>json
+{&quot;event&quot;:&quot;ping&quot;,&quot;ts&quot;:&quot;1635221621062&quot;}
+</code></p></li>
+<li><p>pong：</p></li>
+</ul>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="nl">"event"</span><span class="p">:</span><span class="s2">"pong"</span><span class="p">,</span><span class="nl">"ts"</span><span class="p">:</span><span class="s2">"1635221621062"</span><span class="p">}</span><span class="w">
+</span></code></pre></div><h2 id='user-stream'>User stream</h2>
+<p>User Account stream <strong>subscribe：</strong>
+<code>
+{&quot;event&quot;:&quot;sub&quot;,&quot;params&quot;:{&quot;channel&quot;:&quot;user_account_update&quot;}}
+</code>
+<strong>response：</strong></p>
+
+<p>sub success :
+<code>
+{&quot;event&quot;:&quot;user_account_update&quot;,&quot;status&quot;:&quot;ok&quot;,&quot;ts&quot;:1689568979259}
+</code></p>
+<h2 id='payload'>payload</h2><h4 id='order-event'>order event :</h4><div class="highlight"><pre class="highlight plaintext"><code>{
+    "e": "ORDER_TRADE_UPDATE", // Event type
+    "E": 1568879465651, // Event time (timestamp)
+    "o": {
+        "s": "BTCUSDT", // Trading pair
+        "c": "TEST", // Client-provided order ID
+        "S": "SELL", // Order direction
+        "o": "MARKET", // Order type (MARKET|LIMIT|IOC|POST_ONLY...)
+        "q": "0.001", // Original order quantity (multiplied by face value)
+        "p": "0", // Original order price
+        "ap": "0", // Average order price (price after execution)
+        "x": "NEW", // Specific execution type for this event (new, liquidation, trade, cancel, adl)
+        "X": "NEW", // Current status of the order (status)
+        "i": 8886774, // Order ID
+        "l": "0", // Order quantity filled in the current event
+        "z": "0", // Cumulative filled order quantity
+        "L": "0", // Price at which the order was filled in the current event
+        "N": "USDT", // Fee asset type
+        "n": "0", // Fee amount (total fee)
+        "T": 1568879465650, // Trade time
+        "t": 0, // Trade ID
+        "m": false, // Was this trade a maker or taker? (make, take) Reserved field
+        "R": false, // Is this a reduce-only order? (default false) Reserved field
+        "ps": "LONG", // Position direction (long if present, short if empty)
+        "rp": "0" // Realized profit or loss for this trade (current P&amp;L)
+    }
+}
+</code></pre></div>
+<p>Orders are updated with the executionReport event.</p>
+
+<p>Execution types(<code>x</code>):</p>
+
+<ul>
+<li>NEW - The order has been accepted into the engine.</li>
+<li>CANCELED - The order has been canceled by the user.</li>
+<li>TRADE - Part of the order or all of the order&#39;s quantity has filled.</li>
+<li>LIQUIDATION - force liquidation when the position under</li>
+</ul>
+<h4 id='acount-event'>acount event</h4><div class="highlight"><pre class="highlight plaintext"><code>{
+    "e": "ACCOUNT_UPDATE", // Event type
+    "E": 1564745798939, // Event time
+    "T": 1564745798938, // Matching time (tentative)
+    "a": // Account update event
+    {
+        "m": "ORDER", // Event trigger reason (enum: see table)
+        "B": [ // Balance information
+            {
+                "a": "USDT", // Asset name
+                "cw": "122624.12345678", // Cross-margin balance
+                "lb": "0.000", // Locked balance
+                "iw": "100.12345678", // Isolated margin wallet balance
+                "bc": "50.12345678" // Balance change not related to profit and loss or trading fees
+            }, // Only send relevant account balances.
+            {
+                "a": "BUSD",
+                "cw": "122624.12345678",
+                "lb": "0.0000",
+                "iw": "100.12345678",
+                "bc": "50.12345678"
+            }
+        ],
+        "P": [{
+            "s": "BTCUSDT", // Trading pair
+            "pa": "0", // Position amount
+            "ep": "0.00000", // Entry price
+            "lp": "28343.33", // Last settlement price
+            "cr": "200", // Cumulative realized profit and loss (history_realized_amount) including fees
+            "up": "0", // Unrealized profit and loss for the position (lp -&gt; current)
+            "mt": "1", // Margin type, position type (1 Cross, 2 Isolated)
+            "iw": "0.00000000", // If isolated, isolated margin for the position
+            "ps": "SHORT|LONG" // Position direction (SHORT|LONG)
+        }]
+    }
+}
+</code></pre></div><h1 id='error-code-list'>Error code list</h1>
 <table><thead>
 <tr>
 <th>Error code</th>
@@ -3351,1038 +3655,280 @@ body:</p>
 </tr>
 </thead><tbody>
 <tr>
-<td>100118</td>
-<td>user.ip.soft.prohibit.country</td>
-</tr>
-<tr>
-<td>13005</td>
-<td>un.config.setting</td>
-</tr>
-<tr>
-<td>10019</td>
-<td>base.params.not.numbers</td>
-</tr>
-<tr>
-<td>107009</td>
-<td>kol.rebate.edit.error</td>
-</tr>
-<tr>
-<td>107008</td>
-<td>kol.self.commission.limit</td>
-</tr>
-<tr>
-<td>13001</td>
-<td>exist.share.audit</td>
-</tr>
-<tr>
-<td>101000</td>
-<td>trade.user.balance.not.enough</td>
-</tr>
-<tr>
-<td>101009</td>
-<td>copy.trade.not.allow.open.order</td>
-</tr>
-<tr>
-<td>12007</td>
-<td>activity.voucher.kyc.limit</td>
-</tr>
-<tr>
-<td>101013</td>
-<td>the.contract.not.in.copy.trader.config</td>
-</tr>
-<tr>
-<td>-1151</td>
-<td>USER_INIT_POSITION</td>
-</tr>
-<tr>
-<td>101010</td>
-<td>share.trade.account.cannot.isolated.margin.model</td>
-</tr>
-<tr>
-<td>10057</td>
-<td>position.lever.over.range</td>
-</tr>
-<tr>
 <td>0</td>
-<td>success</td>
-</tr>
-<tr>
-<td>-1161</td>
-<td>ORDER_MAX_ORDER_BALANCE</td>
-</tr>
-<tr>
-<td>12000</td>
-<td>activity.voucher.success</td>
-</tr>
-<tr>
-<td>10021</td>
-<td>order.cancel.fails</td>
-</tr>
-<tr>
-<td>10040</td>
-<td>kol.create.order.fails.margin.model.error</td>
-</tr>
-<tr>
-<td>-1111</td>
-<td>BAD_PRECISION</td>
-</tr>
-<tr>
-<td>10024</td>
-<td>position.lock</td>
-</tr>
-<tr>
-<td>12005</td>
-<td>activity.voucher.failed</td>
-</tr>
-<tr>
-<td>100115</td>
-<td>get.list.data.error</td>
-</tr>
-<tr>
-<td>-1100</td>
-<td>ILLEGAL_CHARS</td>
-</tr>
-<tr>
-<td>100511</td>
-<td>user.robot.limit.contract</td>
-</tr>
-<tr>
-<td>100501</td>
-<td>user.not.open.contract</td>
-</tr>
-<tr>
-<td>10007</td>
-<td>max.balance</td>
-</tr>
-<tr>
-<td>-1106</td>
-<td>PARAM_NOT_REQUIRED</td>
-</tr>
-<tr>
-<td>101008</td>
-<td>share.trade.not.allow.order</td>
-</tr>
-<tr>
-<td>10014</td>
-<td>order.position.lock</td>
-</tr>
-<tr>
-<td>-1137</td>
-<td>ORDER_QUANTITY_TOO_BIG</td>
-</tr>
-<tr>
-<td>107001</td>
-<td>kol.user.not.has.ext</td>
-</tr>
-<tr>
-<td>100510</td>
-<td>user.coupon.is.send</td>
-</tr>
-<tr>
-<td>-1023</td>
-<td>UNAUTHORIZED_TS</td>
-</tr>
-<tr>
-<td>100114</td>
-<td>user.transfer.lock</td>
-</tr>
-<tr>
-<td>-1156</td>
-<td>ORDER_POSITION_CLOSE</td>
-</tr>
-<tr>
-<td>200001</td>
-<td>fail</td>
-</tr>
-<tr>
-<td>10035</td>
-<td>stop.loss.create.order.prefix</td>
-</tr>
-<tr>
-<td>10045</td>
-<td>not.support.forward.contract</td>
-</tr>
-<tr>
-<td>101002</td>
-<td>coin.can.not.trans.out</td>
-</tr>
-<tr>
-<td>10017</td>
-<td>exchange.lock</td>
-</tr>
-<tr>
-<td>13004</td>
-<td>arrive.copy.upper</td>
-</tr>
-<tr>
-<td>0</td>
-<td>take.profit.create.order.succ</td>
-</tr>
-<tr>
-<td>100507</td>
-<td>user.can.not.change.conf</td>
-</tr>
-<tr>
-<td>-1103</td>
-<td>UNKNOWN_PARAM</td>
-</tr>
-<tr>
-<td>108002</td>
-<td>contract.notClose</td>
-</tr>
-<tr>
-<td>13010</td>
-<td>copy.user.has.un.share</td>
-</tr>
-<tr>
-<td>10000</td>
-<td>order.fails</td>
-</tr>
-<tr>
-<td>10009</td>
-<td>contract.notOpen</td>
-</tr>
-<tr>
-<td>-1146</td>
-<td>ORDER_CONTRACT_NOT_OPEN</td>
-</tr>
-<tr>
-<td>100103</td>
-<td>sms.verify.fail</td>
-</tr>
-<tr>
-<td>-1155</td>
-<td>PRICE_BEYOND_VALID_RANGE</td>
-</tr>
-<tr>
-<td>10046</td>
-<td>price.beyond.valid.range</td>
-</tr>
-<tr>
-<td>10027</td>
-<td>stop.loss.create.order.fail</td>
-</tr>
-<tr>
-<td>-1152</td>
-<td>POSITION_LEVER_FAIL</td>
-</tr>
-<tr>
-<td>100513</td>
-<td>user.award.not</td>
-</tr>
-<tr>
-<td>10037</td>
-<td>close.sell.stop.loss.gt.price</td>
-</tr>
-<tr>
-<td>11000</td>
-<td>waas.transfer.confirm.fail</td>
-</tr>
-<tr>
-<td>100503</td>
-<td>user.has.current.orders</td>
-</tr>
-<tr>
-<td>109001</td>
-<td>mdl.no.robot.position</td>
-</tr>
-<tr>
-<td>10022</td>
-<td>position.not.exists</td>
-</tr>
-<tr>
-<td>0</td>
-<td>stop.loss.create.order.succ</td>
-</tr>
-<tr>
-<td>11001</td>
-<td>waas.transfer.confirm.diff</td>
-</tr>
-<tr>
-<td>13011</td>
-<td>copy.config.not.can.update</td>
-</tr>
-<tr>
-<td>-1105</td>
-<td>PARAM_EMPTY</td>
-</tr>
-<tr>
-<td>100113</td>
-<td>config.contract.is.null</td>
-</tr>
-<tr>
-<td>102001</td>
-<td>transfer.exists</td>
-</tr>
-<tr>
-<td>-2016</td>
-<td>exchange_lock</td>
-</tr>
-<tr>
-<td>200003</td>
-<td>api.request.illegal</td>
-</tr>
-<tr>
-<td>10036</td>
-<td>close.sell.take.profit.lt.price</td>
-</tr>
-<tr>
-<td>12006</td>
-<td>activity.voucher.amount.limit</td>
-</tr>
-<tr>
-<td>13016</td>
-<td>copy.to.share.change</td>
-</tr>
-<tr>
-<td>10006</td>
-<td>max.volume</td>
-</tr>
-<tr>
-<td>12103</td>
-<td>activity.task.not.newuser</td>
-</tr>
-<tr>
-<td>-1024</td>
-<td>UNAUTHORIZED_SIGN</td>
-</tr>
-<tr>
-<td>12101</td>
-<td>activity.task.nonsupport.report</td>
-</tr>
-<tr>
-<td>102000</td>
-<td>trans.rpc.error</td>
-</tr>
-<tr>
-<td>-1147</td>
-<td>NOT_SUPPORT_INVERSE_CONTRACT</td>
-</tr>
-<tr>
-<td>100100</td>
-<td>validate.code.error</td>
-</tr>
-<tr>
-<td>10055</td>
-<td>not.support.create.reverse.open.order</td>
-</tr>
-<tr>
-<td>-1</td>
-<td>companyInfoError</td>
-</tr>
-<tr>
-<td>20002</td>
-<td>limit.global.ip</td>
+<td>Success</td>
 </tr>
 <tr>
 <td>-1000</td>
-<td>UNKNOWN</td>
-</tr>
-<tr>
-<td>100505</td>
-<td>user.has.orders</td>
-</tr>
-<tr>
-<td>12002</td>
-<td>activity.voucher.expired</td>
-</tr>
-<tr>
-<td>-1017</td>
-<td>NO_CONTENT_TYPE</td>
-</tr>
-<tr>
-<td>0</td>
-<td>success</td>
-</tr>
-<tr>
-<td>20004</td>
-<td>limit.global.ip.interface</td>
-</tr>
-<tr>
-<td>101001</td>
-<td>coin.can.not.trans.in</td>
-</tr>
-<tr>
-<td>107004</td>
-<td>kol.user.can.not.chg.margin.model.to.total</td>
-</tr>
-<tr>
-<td>12110</td>
-<td>activity.not.exist</td>
-</tr>
-<tr>
-<td>10039</td>
-<td>close.buy.stop.loss.lt.price</td>
-</tr>
-<tr>
-<td>-1006</td>
-<td>UNEXPECTED_RESP</td>
-</tr>
-<tr>
-<td>109002</td>
-<td>mdl.not.match.side</td>
-</tr>
-<tr>
-<td>-1022</td>
-<td>INVALID_SIGNATURE</td>
-</tr>
-<tr>
-<td>10042</td>
-<td>single.max.order</td>
-</tr>
-<tr>
-<td>-1102</td>
-<td>MANDATORY_PARAM_EMPTY_OR_MALFORMED</td>
-</tr>
-<tr>
-<td>100112</td>
-<td>config.coin.is.null</td>
-</tr>
-<tr>
-<td>-1016</td>
-<td>SERVICE_SHUTTING_DOWN</td>
-</tr>
-<tr>
-<td>20003</td>
-<td>limit.global.uid.interface</td>
-</tr>
-<tr>
-<td>-2017</td>
-<td>balance_not_enough</td>
-</tr>
-<tr>
-<td>101006</td>
-<td>copy.trade.account.not.allow.limit.order</td>
-</tr>
-<tr>
-<td>10031</td>
-<td>stop.loss.app.create.order.fail</td>
-</tr>
-<tr>
-<td>-1025</td>
-<td>USER_UN_OPEN_CONTRACT</td>
-</tr>
-<tr>
-<td>12111</td>
-<td>activity.finished</td>
-</tr>
-<tr>
-<td>107007</td>
-<td>kol.user.can.not.chg.position.model</td>
-</tr>
-<tr>
-<td>200101</td>
-<td>result.header.build_cu.error</td>
-</tr>
-<tr>
-<td>13006</td>
-<td>prohibit.not.operate</td>
-</tr>
-<tr>
-<td>13000</td>
-<td>already.up.trader</td>
-</tr>
-<tr>
-<td>10015</td>
-<td>position.close</td>
-</tr>
-<tr>
-<td>107002</td>
-<td>kol.user.can.not.chg.margin.model</td>
-</tr>
-<tr>
-<td>-1154</td>
-<td>ORDER_MAX_PLACE_ORDER</td>
-</tr>
-<tr>
-<td>-1141</td>
-<td>ORDER_CANCEL_DUPLICATE_INVALID</td>
-</tr>
-<tr>
-<td>-1027</td>
-<td>USER_CONTRACT_LIMIT</td>
-</tr>
-<tr>
-<td>12100</td>
-<td>activity.task.email.success</td>
-</tr>
-<tr>
-<td>13017</td>
-<td>trader.share.to.be.canceled</td>
-</tr>
-<tr>
-<td>101004</td>
-<td>transfer.precision.error</td>
-</tr>
-<tr>
-<td>100109</td>
-<td>user.position.refuse</td>
-</tr>
-<tr>
-<td>13014</td>
-<td>user.not.bind.email</td>
-</tr>
-<tr>
-<td>10025</td>
-<td>volume.precision.error</td>
+<td>Unknown error occurred while processing the request</td>
 </tr>
 <tr>
 <td>-1001</td>
-<td>DISCONNECTED</td>
+<td>Internal error; unable to process your request. Please try again</td>
+</tr>
+<tr>
+<td>-1002</td>
+<td>You are not authorized to perform this request. The request requires sending an API Key; we recommend attaching X-CH-APIKEY to all request headers</td>
 </tr>
 <tr>
 <td>-1003</td>
-<td>TOO_MANY_REQUESTS</td>
-</tr>
-<tr>
-<td>10029</td>
-<td>no.trigger.order</td>
-</tr>
-<tr>
-<td>100502</td>
-<td>user.has.current.position</td>
-</tr>
-<tr>
-<td>100500</td>
-<td>user.create.fail</td>
-</tr>
-<tr>
-<td>-1007</td>
-<td>TIMEOUT</td>
-</tr>
-<tr>
-<td>100107</td>
-<td>user.login.lock</td>
-</tr>
-<tr>
-<td>12104</td>
-<td>activity.task.email.error</td>
-</tr>
-<tr>
-<td>13008</td>
-<td>share.user.has.position</td>
-</tr>
-<tr>
-<td>10010</td>
-<td>price.range.undefined</td>
-</tr>
-<tr>
-<td>10023</td>
-<td>position.lever.fail</td>
-</tr>
-<tr>
-<td>10040</td>
-<td>kol.create.order.fails.lever.error</td>
-</tr>
-<tr>
-<td>10026</td>
-<td>take.profit.create.order.fail</td>
-</tr>
-<tr>
-<td>200006</td>
-<td>api.parameter.token.illegal</td>
-</tr>
-<tr>
-<td>100108</td>
-<td>user.position.not.exists</td>
-</tr>
-<tr>
-<td>100117</td>
-<td>user.ip.force.prohibit.country</td>
-</tr>
-<tr>
-<td>100514</td>
-<td>user.award.count</td>
-</tr>
-<tr>
-<td>13015</td>
-<td>share.to.copy.change</td>
-</tr>
-<tr>
-<td>-1160</td>
-<td>ORDER_MIN_ORDER_BALANCE</td>
-</tr>
-<tr>
-<td>100105</td>
-<td>rt.sign.fail</td>
-</tr>
-<tr>
-<td>101012</td>
-<td>share.trade.not.allow.symbol</td>
-</tr>
-<tr>
-<td>10038</td>
-<td>close.buy.take.profit.gt.price</td>
-</tr>
-<tr>
-<td>12115</td>
-<td>activity.banner.name.exist</td>
-</tr>
-<tr>
-<td>-1139</td>
-<td>ORDER_NOT_SUPPORT_MARKET</td>
-</tr>
-<tr>
-<td>12105</td>
-<td>activity.task.email.self</td>
-</tr>
-<tr>
-<td>12115</td>
-<td>activity.banner.name.exist</td>
-</tr>
-<tr>
-<td>10047</td>
-<td>client.orderId.duplicated</td>
-</tr>
-<tr>
-<td>-2100</td>
-<td>param_error</td>
-</tr>
-<tr>
-<td>-2013</td>
-<td>NO_SUCH_ORDER</td>
-</tr>
-<tr>
-<td>-1136</td>
-<td>ORDER_QUANTITY_TOO_SMALL</td>
-</tr>
-<tr>
-<td>100106</td>
-<td>user.not.exist</td>
-</tr>
-<tr>
-<td>107005</td>
-<td>kol.user.can.not.chg.lever</td>
+<td>Request frequency exceeds the limit</td>
 </tr>
 <tr>
 <td>-1004</td>
-<td>NO_THIS_COMPANY</td>
+<td>You are not authorized to perform this request; user does not exist</td>
 </tr>
 <tr>
-<td>-1159</td>
-<td>ORDER_VOLUME_PRECISION_ERROR</td>
+<td>-1006</td>
+<td>Received a message that does not conform to the expected format; order status is unknown</td>
 </tr>
 <tr>
-<td>-2014</td>
-<td>BAD_API_KEY_FMT</td>
-</tr>
-<tr>
-<td>10018</td>
-<td>base.params.has.null</td>
-</tr>
-<tr>
-<td>10005</td>
-<td>min.balance</td>
-</tr>
-<tr>
-<td>100509</td>
-<td>user.coupon.config.not.exit</td>
-</tr>
-<tr>
-<td>-1101</td>
-<td>TOO_MANY_PARAMETERS</td>
-</tr>
-<tr>
-<td>107003</td>
-<td>kol.user.can.not.chg_margin.model.to.part</td>
-</tr>
-<tr>
-<td>12112</td>
-<td>activity.has.signed</td>
-</tr>
-<tr>
-<td>100512</td>
-<td>user.robot.limit.ordertype</td>
-</tr>
-<tr>
-<td>-1021</td>
-<td>INVALID_TIMESTAMP</td>
-</tr>
-<tr>
-<td>13003</td>
-<td>exist.copy.position</td>
-</tr>
-<tr>
-<td>-1118</td>
-<td>EMPTY_NEW_CL_ORD_ID</td>
-</tr>
-<tr>
-<td>107006</td>
-<td>kol.user.can.not.chg.margin.amount</td>
-</tr>
-<tr>
-<td>200007</td>
-<td>api.ip.illegal</td>
-</tr>
-<tr>
-<td>12106</td>
-<td>activity.task.email.send.limit</td>
-</tr>
-<tr>
-<td>12003</td>
-<td>activity.voucher.notexist</td>
-</tr>
-<tr>
-<td>-2015</td>
-<td>REJECTED_API_KEY</td>
+<td>-1007</td>
+<td>Timeout waiting for backend server response. Sending status is unknown; execution status is unknown</td>
 </tr>
 <tr>
 <td>-1014</td>
-<td>UNKNOWN_ORDER_COMPOSITION</td>
-</tr>
-<tr>
-<td>10020</td>
-<td>contract.config.not.exists</td>
-</tr>
-<tr>
-<td>13009</td>
-<td>copy.user.has.position</td>
-</tr>
-<tr>
-<td>-1149</td>
-<td>ORDER_CLIENT_ID_DUPLICATED</td>
-</tr>
-<tr>
-<td>-1158</td>
-<td>ORDER_MAX_VALID_VOLUME</td>
-</tr>
-<tr>
-<td>100515</td>
-<td>user.award.seconds.limit</td>
-</tr>
-<tr>
-<td>-1026</td>
-<td>USER_LIMIT_MAKET_ORDER</td>
-</tr>
-<tr>
-<td>-1153</td>
-<td>POSITION_LEVER_OVER_RANGE</td>
+<td>Unsupported order combination</td>
 </tr>
 <tr>
 <td>-1015</td>
-<td>TOO_MANY_ORDERS</td>
+<td>Too many orders. Please reduce the number of your orders</td>
 </tr>
 <tr>
-<td>100101</td>
-<td>sms.send.frequently</td>
+<td>-1016</td>
+<td>Server offline</td>
 </tr>
 <tr>
-<td>200004</td>
-<td>param.illegal</td>
-</tr>
-<tr>
-<td>108004</td>
-<td>contract.exception.order</td>
-</tr>
-<tr>
-<td>-1149</td>
-<td>USER_POSITION_NOT_EXISTS</td>
-</tr>
-<tr>
-<td>10002</td>
-<td>user.not.login</td>
-</tr>
-<tr>
-<td>10028</td>
-<td>tpsl.create.order.succ</td>
-</tr>
-<tr>
-<td>13007</td>
-<td>share.user.has.order</td>
-</tr>
-<tr>
-<td>12109</td>
-<td>activity.task.not.match.channel</td>
-</tr>
-<tr>
-<td>10012</td>
-<td>order.lever.limit</td>
-</tr>
-<tr>
-<td>107000</td>
-<td>kol.user.has.order.or.position</td>
-</tr>
-<tr>
-<td>-1138</td>
-<td>ORDER_PRICE_WAVE_EXCEED</td>
-</tr>
-<tr>
-<td>100508</td>
-<td>user.co.ext.update.fail</td>
-</tr>
-<tr>
-<td>101003</td>
-<td>trade.available.transfer.balance.not.enough</td>
-</tr>
-<tr>
-<td>100504</td>
-<td>user.has.position</td>
-</tr>
-<tr>
-<td>10043</td>
-<td>position.close.not.enough</td>
-</tr>
-<tr>
-<td>12102</td>
-<td>activity.task.blance.not.enough</td>
-</tr>
-<tr>
-<td>-1121</td>
-<td>BAD_SYMBOL</td>
-</tr>
-<tr>
-<td>-1148</td>
-<td>NOT_SUPPORT_FORWARD_CONTRACT</td>
-</tr>
-<tr>
-<td>100506</td>
-<td>user.coext.not.exist</td>
-</tr>
-<tr>
-<td>100517</td>
-<td>user.award.un.sign</td>
-</tr>
-<tr>
-<td>-1140</td>
-<td>ORDER_POSITION_LIMIT</td>
-</tr>
-<tr>
-<td>200004</td>
-<td>param.illegal</td>
-</tr>
-<tr>
-<td>12004</td>
-<td>activity.voucher.converted</td>
-</tr>
-<tr>
-<td>-1157</td>
-<td>POSITION_LOCK</td>
-</tr>
-<tr>
-<td>109003</td>
-<td>mdl.no.mark.price</td>
-</tr>
-<tr>
-<td>101005</td>
-<td>hold.copy.position</td>
-</tr>
-<tr>
-<td>100116</td>
-<td>rt.sign.expired</td>
-</tr>
-<tr>
-<td>10001</td>
-<td>user.balance</td>
-</tr>
-<tr>
-<td>10030</td>
-<td>take.profit.app.create.order.fail</td>
-</tr>
-<tr>
-<td>10034</td>
-<td>take.profit.create.order.prefix</td>
-</tr>
-<tr>
-<td>200002</td>
-<td>api.sys.error</td>
-</tr>
-<tr>
-<td>101011</td>
-<td>share.trader.service.unavailable</td>
-</tr>
-<tr>
-<td>101007</td>
-<td>copy.trade.account.not.allow.isolated.margin.model</td>
-</tr>
-<tr>
-<td>12001</td>
-<td>activity.voucher.ing</td>
-</tr>
-<tr>
-<td>12114</td>
-<td>activity.banner.not.exist</td>
+<td>-1017</td>
+<td>We recommend attaching Content-Type to all request headers and setting it to application/json</td>
 </tr>
 <tr>
 <td>-1020</td>
 <td>UNSUPPORTED_OPERATION</td>
 </tr>
 <tr>
-<td>13012</td>
-<td>share.trader.not.can.copy</td>
+<td>-1021</td>
+<td>Invalid timestamp; time offset is too large</td>
 </tr>
 <tr>
-<td>100102</td>
-<td>sms.send.error</td>
+<td>-1022</td>
+<td>Invalid signature</td>
 </tr>
 <tr>
-<td>10008</td>
-<td>not.enough.depth</td>
+<td>-1023</td>
+<td>You are not authorized to perform this request. The request requires sending a timestamp; we recommend attaching X-CH-TS to all request headers</td>
 </tr>
 <tr>
-<td>10011</td>
-<td>price.precision.error</td>
+<td>-1024</td>
+<td>You are not authorized to perform this request. The request requires sending a sign; we recommend attaching X-CH-SIGN to all request headers</td>
 </tr>
 <tr>
-<td>108001</td>
-<td>contract.notClose</td>
+<td>-1025</td>
+<td>User has not activated the contract</td>
 </tr>
 <tr>
-<td>12107</td>
-<td>activity.task.email.sended</td>
+<td>-1100</td>
+<td>Illegal characters in the request</td>
 </tr>
 <tr>
-<td>-1112</td>
-<td>NO_DEPTH</td>
+<td>-1101</td>
+<td>Too many parameters sent</td>
 </tr>
 <tr>
-<td>100110</td>
-<td>user.position.not</td>
+<td>-1102</td>
+<td>Required parameter {0} not sent, empty, or in the wrong format</td>
 </tr>
 <tr>
-<td>200008</td>
-<td>request.method.not.support</td>
-</tr>
-<tr>
-<td>200005</td>
-<td>api.parameter.sign.illegal</td>
-</tr>
-<tr>
-<td>13013</td>
-<td>copy.user.has.order</td>
-</tr>
-<tr>
-<td>13002</td>
-<td>exist.copy.trader</td>
-</tr>
-<tr>
-<td>-1002</td>
-<td>UNAUTHORIZED_APIKEY</td>
-</tr>
-<tr>
-<td>100516</td>
-<td>user.award.activity.finished</td>
-</tr>
-<tr>
-<td>10004</td>
-<td>min.volume</td>
-</tr>
-<tr>
-<td>-1150</td>
-<td>TRANSFER_PRECISION_ERROR</td>
-</tr>
-<tr>
-<td>-1116</td>
-<td>INVALID_ORDER_TYPE</td>
-</tr>
-<tr>
-<td>10013</td>
-<td>position.limit</td>
-</tr>
-<tr>
-<td>100111</td>
-<td>send.rpc.error</td>
-</tr>
-<tr>
-<td>10044</td>
-<td>not.support.inverse.contract</td>
-</tr>
-<tr>
-<td>-1117</td>
-<td>INVALID_SIDE</td>
-</tr>
-<tr>
-<td>10003</td>
-<td>max.valid.order</td>
-</tr>
-<tr>
-<td>108003</td>
-<td>contract.noRobot</td>
-</tr>
-<tr>
-<td>20001</td>
-<td>limit.global.uid</td>
+<td>-1103</td>
+<td>Unknown parameters sent</td>
 </tr>
 <tr>
 <td>-1104</td>
-<td>UNREAD_PARAMETERS</td>
+<td>Not all sent parameters have been read</td>
 </tr>
 <tr>
-<td>10041</td>
-<td>account.type.not.exist</td>
+<td>-1105</td>
+<td>Parameter {0} is empty</td>
 </tr>
 <tr>
-<td>12108</td>
-<td>activity.task.email.receive.limit</td>
+<td>-1106</td>
+<td>This parameter does not need to be sent</td>
 </tr>
 <tr>
-<td>10016</td>
-<td>exists.reduce.order</td>
+<td>-1111</td>
+<td>Precision exceeds the maximum value defined for this asset</td>
 </tr>
 <tr>
-<td>12113</td>
-<td>contract.experience.amount.limit</td>
+<td>-1112</td>
+<td>No orders exist for the trading pair</td>
+</tr>
+<tr>
+<td>-1116</td>
+<td>Invalid order type</td>
+</tr>
+<tr>
+<td>-1117</td>
+<td>Invalid buy/sell direction</td>
+</tr>
+<tr>
+<td>-1118</td>
+<td>New client order ID is empty</td>
+</tr>
+<tr>
+<td>-1121</td>
+<td>Invalid contract</td>
+</tr>
+<tr>
+<td>-1136</td>
+<td>Order quantity is less than the minimum value</td>
+</tr>
+<tr>
+<td>-1137</td>
+<td>Order quantity exceeds the maximum limit</td>
+</tr>
+<tr>
+<td>-1138</td>
+<td>Order price is out of allowable range</td>
+</tr>
+<tr>
+<td>-1139</td>
+<td>This trading pair does not support market orders</td>
+</tr>
+<tr>
+<td>-1140</td>
+<td>Exceeds the maximum position limit</td>
+</tr>
+<tr>
+<td>-1141</td>
+<td>Duplicate cancellation or invalid order</td>
 </tr>
 <tr>
 <td>-1145</td>
-<td>ORDER_NOT_SUPPORT_CANCELLATION</td>
-</tr>
-</tbody></table>
-<h1 id='errors'>Errors</h1>
-<aside class="notice">
-This error section is stored in a separate file in <code>includes/_errors.md</code>. Slate allows you to optionally separate out your docs into many files...just save them to the <code>includes</code> folder and add them to the top of your <code>index.md</code>'s frontmatter. Files are included in the order listed.
-</aside>
-
-<p>The Kittn API uses the following error codes:</p>
-
-<table><thead>
-<tr>
-<th>Error Code</th>
-<th>Meaning</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>400</td>
-<td>Bad Request -- Your request is invalid.</td>
+<td>Order status does not allow cancellation</td>
 </tr>
 <tr>
-<td>401</td>
-<td>Unauthorized -- Your API key is wrong.</td>
+<td>-1146</td>
+<td>Current contract cannot be traded temporarily</td>
 </tr>
 <tr>
-<td>403</td>
-<td>Forbidden -- The kitten requested is hidden for administrators only.</td>
+<td>-1147</td>
+<td>The current interface does not support coin-margined contracts</td>
 </tr>
 <tr>
-<td>404</td>
-<td>Not Found -- The specified kitten could not be found.</td>
+<td>-1148</td>
+<td>The current interface does not support USDT-margined contracts</td>
 </tr>
 <tr>
-<td>405</td>
-<td>Method Not Allowed -- You tried to access a kitten with an invalid method.</td>
+<td>-1149</td>
+<td>Your isolated position does not exist</td>
 </tr>
 <tr>
-<td>406</td>
-<td>Not Acceptable -- You requested a format that isn&#39;t json.</td>
+<td>-1150</td>
+<td>Maximum of {0} decimal places allowed</td>
 </tr>
 <tr>
-<td>410</td>
-<td>Gone -- The kitten requested has been removed from our servers.</td>
+<td>-1151</td>
+<td>Transfer amount exceeds the limit</td>
 </tr>
 <tr>
-<td>418</td>
-<td>I&#39;m a teapot.</td>
+<td>-1152</td>
+<td>Position leverage adjustment failed</td>
 </tr>
 <tr>
-<td>429</td>
-<td>Too Many Requests -- You&#39;re requesting too many kittens! Slow down!</td>
+<td>-1153</td>
+<td>Maximum leverage does not exceed {0}</td>
 </tr>
 <tr>
-<td>500</td>
-<td>Internal Server Error -- We had a problem with our server. Try again later.</td>
+<td>-1154</td>
+<td>Order quantity exceeds the maximum limit</td>
 </tr>
 <tr>
-<td>503</td>
-<td>Service Unavailable -- We&#39;re temporarily offline for maintenance. Please try again later.</td>
+<td>-1155</td>
+<td>Order price deviates significantly from the latest trade price</td>
+</tr>
+<tr>
+<td>-1156</td>
+<td>Closing quantity exceeds the total position quantity</td>
+</tr>
+<tr>
+<td>-1157</td>
+<td>Position frozen, cannot be operated temporarily</td>
+</tr>
+<tr>
+<td>-1158</td>
+<td>Total order quantity exceeds the limit</td>
+</tr>
+<tr>
+<td>-1159</td>
+<td>Maximum of {0} decimal places allowed for order amount</td>
+</tr>
+<tr>
+<td>-1160</td>
+<td>Minimum order amount is {0}</td>
+</tr>
+<tr>
+<td>-1161</td>
+<td>Maximum order amount is {0}</td>
+</tr>
+<tr>
+<td>-1162</td>
+<td>Maximum of {0} decimal places allowed for limit order amount</td>
+</tr>
+<tr>
+<td>-1163</td>
+<td>There are currently open orders; leverage cannot be modified</td>
+</tr>
+<tr>
+<td>-1164</td>
+<td>Order quantity must be greater than {0}</td>
+</tr>
+<tr>
+<td>-1165</td>
+<td>Order type does not match user contract configuration {0}</td>
+</tr>
+<tr>
+<td>-1166</td>
+<td>Order leverage does not match user contract configuration {0}</td>
+</tr>
+<tr>
+<td>-1167</td>
+<td>Order book is too large; self-trade prevention failed</td>
+</tr>
+<tr>
+<td>-1168</td>
+<td>Order book is missing</td>
+</tr>
+<tr>
+<td>-2013</td>
+<td>Order does not exist</td>
+</tr>
+<tr>
+<td>-2014</td>
+<td>Invalid API key format</td>
+</tr>
+<tr>
+<td>-2015</td>
+<td>Invalid API key, IP, or permission</td>
+</tr>
+<tr>
+<td>-2016</td>
+<td>Trading is frozen</td>
+</tr>
+<tr>
+<td>-2017</td>
+<td>Insufficient balance</td>
+</tr>
+<tr>
+<td>-2100</td>
+<td>Parameter issue</td>
+</tr>
+<tr>
+<td>-2101</td>
+<td>User IP is non-compliant and the country is forcibly banned</td>
+</tr>
+<tr>
+<td>-2102</td>
+<td>User IP is soft-banned in the country</td>
 </tr>
 </tbody></table>
 
@@ -4390,6 +3936,8 @@ This error section is stored in a separate file in <code>includes/_errors.md</co
       <div class="dark-box">
           <div class="lang-selector">
                 <a href="#" data-language-name="demo">demo</a>
+                <a href="#" data-language-name="java">java</a>
+                <a href="#" data-language-name="shell">shell</a>
           </div>
       </div>
     </div>

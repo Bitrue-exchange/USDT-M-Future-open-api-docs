@@ -1,4 +1,4 @@
-<h1 id='coin-m-futures-order'>COIN-M Futures:order</h1><h2 id='account-trade-list-user_data-hmac-sha256'>Account Trade List (USER_DATA)(HMAC SHA256)</h2><div class="highlight"><pre class="highlight plaintext"><code>curl -X GET -i /dapi/v2/myTrades?contractName=E-SAND-USDC&amp;fromId=&amp;limit=10&amp;startTime=&amp;endTime=
+<h1 id='order'>order</h1><h2 id='account-trade-list-user_data-hmac-sha256'>Account Trade List (USER_DATA)(HMAC SHA256)</h2><div class="highlight"><pre class="highlight plaintext"><code>curl -X GET -i /dapi/v2/myTrades?contractName=E-SAND-USD&amp;fromId=&amp;limit=10&amp;startTime=&amp;endTime=
 </code></pre></div>
 <blockquote>
 <p>The above command returns JSON structured like this:</p>
@@ -12,7 +12,7 @@
             </span><span class="nl">"price"</span><span class="p">:</span><span class="mf">0.9</span><span class="p">,</span><span class="w">
             </span><span class="nl">"qty"</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span><span class="w">
             </span><span class="nl">"amount"</span><span class="p">:</span><span class="mi">9</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"contractName"</span><span class="p">:</span><span class="s2">"E-SAND-USDC"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"contractName"</span><span class="p">:</span><span class="s2">"E-SAND-USD"</span><span class="p">,</span><span class="w">
             </span><span class="nl">"side"</span><span class="p">:</span><span class="s2">"BUY"</span><span class="p">,</span><span class="w">
             </span><span class="nl">"fee"</span><span class="p">:</span><span class="s2">"0.0018"</span><span class="p">,</span><span class="w">
             </span><span class="nl">"bidId"</span><span class="p">:</span><span class="mi">1558124009467904992</span><span class="p">,</span><span class="w">
@@ -30,7 +30,7 @@
 
 <p><strong>Type:</strong> <code>GET</code></p>
 
-<p><strong>Content-Type:</strong> <code>application/x-www-form-urlencoded;charset=UTF-8</code></p>
+<p><strong>Content-Type:</strong> <code>application/json</code></p>
 
 <p><strong>Description:</strong> Account Trade List (USER_DATA)(HMAC SHA256)</p>
 
@@ -172,7 +172,7 @@
 </tr>
 </tbody></table>
 <h2 id='modify-isolated-position-margin-trade-hmac-sha256'>Modify Isolated Position Margin (TRADE)(HMAC SHA256)</h2><div class="highlight"><pre class="highlight plaintext"><code>curl -X POST -H 'Content-Type: application/json' -i /dapi/v2/positionMargin --data '{
-    'contractName': 'E-SAND-USDC',
+    'contractName': 'E-SAND-USD',
     'positionMargin': 10
 }'
 </code></pre></div>
@@ -243,7 +243,7 @@
 </tr>
 </tbody></table>
 <h2 id='change-initial-leverage-trade-hmac-sha256'>Change Initial Leverage (TRADE)(HMAC SHA256)</h2><div class="highlight"><pre class="highlight plaintext"><code>curl -X POST -H 'Content-Type: application/json' -i /dapi/v2/level_edit --data '{
-    'contractName': 'E-BTC-USDT',
+    'contractName': 'E-BTC-USD',
     'leverage': 10
 }'
 </code></pre></div>
@@ -313,7 +313,7 @@
 <td>return data</td>
 </tr>
 </tbody></table>
-<h2 id='current-all-open-orders-user_data-hmac-sha256'>Current All Open Orders (USER_DATA)(HMAC SHA256)</h2><div class="highlight"><pre class="highlight plaintext"><code>curl -X GET -i /dapi/v2/openOrders?contractName=E-SAND-USDC
+<h2 id='current-all-open-orders-user_data-hmac-sha256'>Current All Open Orders (USER_DATA)(HMAC SHA256)</h2><div class="highlight"><pre class="highlight plaintext"><code>curl -X GET -i /dapi/v2/openOrders?contractName=E-SAND-USD
 </code></pre></div>
 <blockquote>
 <p>The above command returns JSON structured like this:</p>
@@ -342,7 +342,7 @@
 
 <p><strong>Type:</strong> <code>GET</code></p>
 
-<p><strong>Content-Type:</strong> <code>application/x-www-form-urlencoded;charset=UTF-8</code></p>
+<p><strong>Content-Type:</strong> <code>application/json</code></p>
 
 <p><strong>Description:</strong> Current All Open Orders (USER_DATA)(HMAC SHA256)</p>
 
@@ -450,7 +450,7 @@
 </tr>
 </tbody></table>
 <h2 id='cancel-order-trade-hmac-sha256'>Cancel Order (TRADE)(HMAC SHA256)</h2><div class="highlight"><pre class="highlight plaintext"><code>curl -X POST -H 'Content-Type: application/json' -i /dapi/v2/cancel --data '{
-    'contractName': 'E-SAND-USDC', 
+    'contractName': 'E-SAND-USD', 
     'clientOrderId': "",  
     'orderId': 1690615847831143159, 
 }
@@ -567,7 +567,7 @@
 
 <p><strong>Type:</strong> <code>GET</code></p>
 
-<p><strong>Content-Type:</strong> <code>application/x-www-form-urlencoded;charset=UTF-8</code></p>
+<p><strong>Content-Type:</strong> <code>application/json</code></p>
 
 <p><strong>Description:</strong> Query Order (USER_DATA)(HMAC SHA256)</p>
 
@@ -687,7 +687,7 @@
 </tr>
 </tbody></table>
 <h2 id='new-order-trade-hmac-sha256'>New Order (TRADE)(HMAC SHA256)</h2><div class="highlight"><pre class="highlight plaintext"><code>curl -X POST -H 'Content-Type: application/json' -i /dapi/v2/order --data '{
-    'contractName': 'E-SAND-USDC', 
+    'contractName': 'E-SAND-USD', 
     'clientOrderId': 7993967859, 
     'side': 'BUY', 
     'type': 'LIMIT', 
@@ -814,7 +814,7 @@
 <td>Order ID（system generated）</td>
 </tr>
 </tbody></table>
-<h2 id='cancel-all-open-orders-trade-hmac-sha256'>Cancel All Open Orders (TRADE)(HMAC SHA256)</h2><div class="highlight"><pre class="highlight plaintext"><code>curl -X POST -i /dapi/v2/allOpenOrders --data 'contractName=E-BTC-USDT'
+<h2 id='cancel-all-open-orders-trade-hmac-sha256'>Cancel All Open Orders (TRADE)(HMAC SHA256)</h2><div class="highlight"><pre class="highlight plaintext"><code>curl -X POST -i /dapi/v2/allOpenOrders --data 'contractName=E-BTC-USD'
 </code></pre></div>
 <blockquote>
 <p>The above command returns JSON structured like this:</p>
@@ -829,7 +829,7 @@
 
 <p><strong>Type:</strong> <code>POST</code></p>
 
-<p><strong>Content-Type:</strong> <code>application/x-www-form-urlencoded;charset=UTF-8</code></p>
+<p><strong>Content-Type:</strong> <code>application/json</code></p>
 
 <p><strong>Description:</strong> Cancel All Open Orders (TRADE)(HMAC SHA256)</p>
 

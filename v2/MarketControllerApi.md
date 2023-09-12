@@ -42,7 +42,7 @@ curl -X GET -i /fapi/v1/depth
 
 **Type:** `GET`
 
-**Content-Type:** `application/x-www-form-urlencoded;charset=UTF-8`
+**Content-Type:** `application/json`
 
 **Description:** Order Book
 
@@ -104,7 +104,7 @@ curl -X GET -i /fapi/v1/ticker
 
 **Type:** `GET`
 
-**Content-Type:** `application/x-www-form-urlencoded;charset=UTF-8`
+**Content-Type:** `application/json`
 
 **Description:** ticker
 
@@ -164,7 +164,7 @@ curl -X GET -i /fapi/v1/klines
 
 **Type:** `GET`
 
-**Content-Type:** `application/x-www-form-urlencoded;charset=UTF-8`
+**Content-Type:** `application/json`
 
 **Description:** Kline/Candlestick Data
 

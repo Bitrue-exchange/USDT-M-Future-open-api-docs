@@ -1,4 +1,4 @@
-<h1 id='usd-m-futures-order'>USDⓈ-M Futures:order</h1><h2 id='account-trade-list-user_data-hmac-sha256'>Account Trade List (USER_DATA)(HMAC SHA256)</h2><div class="highlight"><pre class="highlight plaintext"><code>curl -X GET -i /fapi/v2/myTrades?contractName=E-SAND-USDC&amp;fromId=&amp;limit=10&amp;startTime=&amp;endTime=
+<h1 id='order'>order</h1><h2 id='account-trade-list-user_data-hmac-sha256'>Account Trade List (USER_DATA)(HMAC SHA256)</h2><div class="highlight"><pre class="highlight plaintext"><code>curl -X GET -i /fapi/v2/myTrades?contractName=E-SAND-USDT&amp;fromId=&amp;limit=10&amp;startTime=&amp;endTime=
 </code></pre></div>
 <blockquote>
 <p>The above command returns JSON structured like this:</p>
@@ -12,7 +12,7 @@
             </span><span class="nl">"price"</span><span class="p">:</span><span class="mf">0.9</span><span class="p">,</span><span class="w">
             </span><span class="nl">"qty"</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span><span class="w">
             </span><span class="nl">"amount"</span><span class="p">:</span><span class="mi">9</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"contractName"</span><span class="p">:</span><span class="s2">"E-SAND-USDC"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"contractName"</span><span class="p">:</span><span class="s2">"E-SAND-USDT"</span><span class="p">,</span><span class="w">
             </span><span class="nl">"side"</span><span class="p">:</span><span class="s2">"BUY"</span><span class="p">,</span><span class="w">
             </span><span class="nl">"fee"</span><span class="p">:</span><span class="s2">"0.0018"</span><span class="p">,</span><span class="w">
             </span><span class="nl">"bidId"</span><span class="p">:</span><span class="mi">1558124009467904992</span><span class="p">,</span><span class="w">
@@ -30,7 +30,7 @@
 
 <p><strong>Type:</strong> <code>GET</code></p>
 
-<p><strong>Content-Type:</strong> <code>application/x-www-form-urlencoded;charset=UTF-8</code></p>
+<p><strong>Content-Type:</strong> <code>application/json</code></p>
 
 <p><strong>Description:</strong> Account Trade List (USER_DATA)(HMAC SHA256)</p>
 
@@ -48,7 +48,7 @@
 <td>contractName</td>
 <td>string</td>
 <td>true</td>
-<td>Contract name E.g. E-BTC-USD</td>
+<td>Contract name E.g. E-BTC-USDT</td>
 </tr>
 <tr>
 <td>fromId</td>
@@ -172,7 +172,7 @@
 </tr>
 </tbody></table>
 <h2 id='modify-isolated-position-margin-trade-hmac-sha256'>Modify Isolated Position Margin (TRADE)(HMAC SHA256)</h2><div class="highlight"><pre class="highlight plaintext"><code>curl -X POST -H 'Content-Type: application/json' -i /fapi/v2/positionMargin --data '{
-    'contractName': 'E-SAND-USDC',
+    'contractName': 'E-SAND-USDT',
     'positionMargin': 10
 }'
 </code></pre></div>
@@ -207,7 +207,7 @@
 <td>contractName</td>
 <td>string</td>
 <td>true</td>
-<td>Contract name E.g. E-BTC-USD</td>
+<td>Contract name E.g. E-BTC-USDT</td>
 </tr>
 <tr>
 <td>amount</td>
@@ -278,7 +278,7 @@
 <td>contractName</td>
 <td>string</td>
 <td>true</td>
-<td>Contract name E.g. E-BTC-USD</td>
+<td>Contract name E.g. E-BTC-USDT</td>
 </tr>
 <tr>
 <td>leverage</td>
@@ -313,7 +313,7 @@
 <td>return data</td>
 </tr>
 </tbody></table>
-<h2 id='current-all-open-orders-user_data-hmac-sha256'>Current All Open Orders (USER_DATA)(HMAC SHA256)</h2><div class="highlight"><pre class="highlight plaintext"><code>curl -X GET -i /fapi/v2/openOrders?contractName=E-SAND-USDC
+<h2 id='current-all-open-orders-user_data-hmac-sha256'>Current All Open Orders (USER_DATA)(HMAC SHA256)</h2><div class="highlight"><pre class="highlight plaintext"><code>curl -X GET -i /fapi/v2/openOrders?contractName=E-SAND-USDT
 </code></pre></div>
 <blockquote>
 <p>The above command returns JSON structured like this:</p>
@@ -342,7 +342,7 @@
 
 <p><strong>Type:</strong> <code>GET</code></p>
 
-<p><strong>Content-Type:</strong> <code>application/x-www-form-urlencoded;charset=UTF-8</code></p>
+<p><strong>Content-Type:</strong> <code>application/json</code></p>
 
 <p><strong>Description:</strong> Current All Open Orders (USER_DATA)(HMAC SHA256)</p>
 
@@ -360,7 +360,7 @@
 <td>contractName</td>
 <td>string</td>
 <td>true</td>
-<td>Contract name E.g. E-BTC-USD</td>
+<td>Contract name E.g. E-BTC-USDT</td>
 </tr>
 </tbody></table>
 
@@ -450,7 +450,7 @@
 </tr>
 </tbody></table>
 <h2 id='cancel-order-trade-hmac-sha256'>Cancel Order (TRADE)(HMAC SHA256)</h2><div class="highlight"><pre class="highlight plaintext"><code>curl -X POST -H 'Content-Type: application/json' -i /fapi/v2/cancel --data '{
-    'contractName': 'E-SAND-USDC', 
+    'contractName': 'E-SAND-USDT', 
     'clientOrderId': "",  
     'orderId': 1690615847831143159, 
 }
@@ -488,7 +488,7 @@
 <td>contractName</td>
 <td>string</td>
 <td>true</td>
-<td>Contract name E.g. E-BTC-USD</td>
+<td>Contract name E.g. E-BTC-USDT</td>
 </tr>
 <tr>
 <td>clientOrderId</td>
@@ -567,7 +567,7 @@
 
 <p><strong>Type:</strong> <code>GET</code></p>
 
-<p><strong>Content-Type:</strong> <code>application/x-www-form-urlencoded;charset=UTF-8</code></p>
+<p><strong>Content-Type:</strong> <code>application/json</code></p>
 
 <p><strong>Description:</strong> Query Order (USER_DATA)(HMAC SHA256)</p>
 
@@ -585,7 +585,7 @@
 <td>contractName</td>
 <td>string</td>
 <td>true</td>
-<td>Contract name E.g. E-BTC-USD</td>
+<td>Contract name E.g. E-BTC-USDT</td>
 </tr>
 <tr>
 <td>clientOrderId</td>
@@ -687,7 +687,7 @@
 </tr>
 </tbody></table>
 <h2 id='new-order-trade-hmac-sha256'>New Order (TRADE)(HMAC SHA256)</h2><div class="highlight"><pre class="highlight plaintext"><code>curl -X POST -H 'Content-Type: application/json' -i /fapi/v2/order --data '{
-    'contractName': 'E-SAND-USDC', 
+    'contractName': 'E-SAND-USDT', 
     'clientOrderId': 7993967859, 
     'side': 'BUY', 
     'type': 'LIMIT', 
@@ -732,7 +732,7 @@
 <td>contractName</td>
 <td>string</td>
 <td>true</td>
-<td>Contract name E.g. E-BTC-USD</td>
+<td>Contract name E.g. E-BTC-USDT</td>
 </tr>
 <tr>
 <td>clientOrderId</td>
@@ -829,7 +829,7 @@
 
 <p><strong>Type:</strong> <code>POST</code></p>
 
-<p><strong>Content-Type:</strong> <code>application/x-www-form-urlencoded;charset=UTF-8</code></p>
+<p><strong>Content-Type:</strong> <code>application/json</code></p>
 
 <p><strong>Description:</strong> Cancel All Open Orders (TRADE)(HMAC SHA256)</p>
 
@@ -847,7 +847,7 @@
 <td>contractName</td>
 <td>string</td>
 <td>true</td>
-<td>contractame Contract Name E.g. E-BTC-USD</td>
+<td>contractame Contract Name E.g. E-BTC-USDT</td>
 </tr>
 </tbody></table>
 

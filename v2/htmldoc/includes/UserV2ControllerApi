@@ -1,4 +1,4 @@
-<h1 id='usd-m-futures-user'>USDⓈ-M Futures:user</h1><h2 id='account-information-v2-user_data-hmac-sha256'>Account Information V2 (USER_DATA)(HMAC SHA256)</h2><div class="highlight"><pre class="highlight plaintext"><code>curl -X GET -i /fapi/v2/account
+<h1 id='user'>user</h1><h2 id='account-information-v2-user_data-hmac-sha256'>Account Information V2 (USER_DATA)(HMAC SHA256)</h2><div class="highlight"><pre class="highlight plaintext"><code>curl -X GET -i /fapi/v2/account
 </code></pre></div>
 <blockquote>
 <p>The above command returns JSON structured like this:</p>
@@ -31,7 +31,7 @@
         </span><span class="p">]</span><span class="w">
       </span><span class="p">},</span><span class="w">
       </span><span class="p">{</span><span class="w">
-        </span><span class="nl">"marginCoin"</span><span class="p">:</span><span class="s2">"USDC"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"marginCoin"</span><span class="p">:</span><span class="s2">"USDT"</span><span class="p">,</span><span class="w">
         </span><span class="nl">"coinPrecious"</span><span class="p">:</span><span class="mi">8</span><span class="p">,</span><span class="w">
         </span><span class="nl">"accountNormal"</span><span class="p">:</span><span class="mf">9999981.6304078411247375</span><span class="p">,</span><span class="w">
         </span><span class="nl">"accountLock"</span><span class="p">:</span><span class="mf">1.4950614966</span><span class="p">,</span><span class="w">
@@ -51,8 +51,8 @@
         </span><span class="nl">"positionVos"</span><span class="p">:[</span><span class="w">
           </span><span class="p">{</span><span class="w">
             </span><span class="nl">"contractId"</span><span class="p">:</span><span class="mi">62</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"contractName"</span><span class="p">:</span><span class="s2">"E-BTC-USDC"</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"contractSymbol"</span><span class="p">:</span><span class="s2">"BTC-USDC"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"contractName"</span><span class="p">:</span><span class="s2">"E-BTC-USDT"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"contractSymbol"</span><span class="p">:</span><span class="s2">"BTC-USDT"</span><span class="p">,</span><span class="w">
             </span><span class="nl">"adlEnabled"</span><span class="p">:</span><span class="kc">false</span><span class="p">,</span><span class="w">
             </span><span class="nl">"positions"</span><span class="p">:[</span><span class="w">
               </span><span class="p">{</span><span class="w">
@@ -107,7 +107,7 @@
 
 <p><strong>Type:</strong> <code>GET</code></p>
 
-<p><strong>Content-Type:</strong> <code>application/x-www-form-urlencoded;charset=UTF-8</code></p>
+<p><strong>Content-Type:</strong> <code>application/json</code></p>
 
 <p><strong>Description:</strong> Account Information V2 (USER_DATA)(HMAC SHA256)</p>
 
@@ -446,7 +446,7 @@
 <td>update time</td>
 </tr>
 </tbody></table>
-<h2 id='notional-and-leverage-brackets-user_data'>Notional and Leverage Brackets (USER_DATA)</h2><div class="highlight"><pre class="highlight plaintext"><code>curl -X GET -i /fapi/v2/leverageBracket?contractName=E-SAND-USDC
+<h2 id='notional-and-leverage-brackets-user_data'>Notional and Leverage Brackets (USER_DATA)</h2><div class="highlight"><pre class="highlight plaintext"><code>curl -X GET -i /fapi/v2/leverageBracket?contractName=E-SAND-USDT
 </code></pre></div>
 <blockquote>
 <p>The above command returns JSON structured like this:</p>
@@ -455,7 +455,7 @@
     </span><span class="nl">"code"</span><span class="p">:</span><span class="s2">"0"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"msg"</span><span class="p">:</span><span class="s2">"Success"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"data"</span><span class="p">:{</span><span class="w">
-        </span><span class="nl">"contractName"</span><span class="p">:</span><span class="s2">"E-SAND-USDC"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"contractName"</span><span class="p">:</span><span class="s2">"E-SAND-USDT"</span><span class="p">,</span><span class="w">
         </span><span class="nl">"brackets"</span><span class="p">:[</span><span class="w">
             </span><span class="p">{</span><span class="w">
                 </span><span class="nl">"bracket"</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span><span class="w">
@@ -528,7 +528,7 @@
 
 <p><strong>Type:</strong> <code>GET</code></p>
 
-<p><strong>Content-Type:</strong> <code>application/x-www-form-urlencoded;charset=UTF-8</code></p>
+<p><strong>Content-Type:</strong> <code>application/json</code></p>
 
 <p><strong>Description:</strong> Notional and Leverage Brackets (USER_DATA)</p>
 
@@ -610,7 +610,7 @@
 <td>Maintenance ratio for this bracket</td>
 </tr>
 </tbody></table>
-<h2 id='user-commission-rate-user_data-hmac-sha256'>User Commission Rate (USER_DATA)(HMAC SHA256)</h2><div class="highlight"><pre class="highlight plaintext"><code>curl -X GET -i /fapi/v2/commissionRate?contractName=E-SAND-USDC
+<h2 id='user-commission-rate-user_data-hmac-sha256'>User Commission Rate (USER_DATA)(HMAC SHA256)</h2><div class="highlight"><pre class="highlight plaintext"><code>curl -X GET -i /fapi/v2/commissionRate?contractName=E-SAND-USDT
 </code></pre></div>
 <blockquote>
 <p>The above command returns JSON structured like this:</p>
@@ -619,7 +619,7 @@
     </span><span class="nl">"code"</span><span class="p">:</span><span class="s2">"0"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"msg"</span><span class="p">:</span><span class="s2">"Success"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"data"</span><span class="p">:{</span><span class="w">
-        </span><span class="nl">"contractName"</span><span class="p">:</span><span class="s2">"E-SAND-USDC"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"contractName"</span><span class="p">:</span><span class="s2">"E-SAND-USDT"</span><span class="p">,</span><span class="w">
         </span><span class="nl">"openTakerFeeRate"</span><span class="p">:</span><span class="mf">0.0004</span><span class="p">,</span><span class="w">
         </span><span class="nl">"openMakerFeeRate"</span><span class="p">:</span><span class="mf">0.0002</span><span class="p">,</span><span class="w">
         </span><span class="nl">"closeTakerFeeRate"</span><span class="p">:</span><span class="mf">0.0004</span><span class="p">,</span><span class="w">
@@ -631,7 +631,7 @@
 
 <p><strong>Type:</strong> <code>GET</code></p>
 
-<p><strong>Content-Type:</strong> <code>application/x-www-form-urlencoded;charset=UTF-8</code></p>
+<p><strong>Content-Type:</strong> <code>application/json</code></p>
 
 <p><strong>Description:</strong> User Commission Rate (USER_DATA)(HMAC SHA256)</p>
 
@@ -832,7 +832,7 @@
 
 <p><strong>Type:</strong> <code>GET</code></p>
 
-<p><strong>Content-Type:</strong> <code>application/x-www-form-urlencoded;charset=UTF-8</code></p>
+<p><strong>Content-Type:</strong> <code>application/json</code></p>
 
 <p><strong>Description:</strong> Get Future Account transfer History List (USER_DATA)(HMAC SHA256)</p>
 
@@ -939,7 +939,7 @@
 <td>create time</td>
 </tr>
 </tbody></table>
-<h2 id='user-39-s-force-orders-user_data'>User&#39;s Force Orders (USER_DATA)</h2><div class="highlight"><pre class="highlight plaintext"><code>curl -X GET -i /fapi/v2/forceOrdersHistory?contractName=E-BTC-USDC
+<h2 id='user-39-s-force-orders-user_data'>User&#39;s Force Orders (USER_DATA)</h2><div class="highlight"><pre class="highlight plaintext"><code>curl -X GET -i /fapi/v2/forceOrdersHistory?contractName=E-BTC-USDT
 </code></pre></div>
 <blockquote>
 <p>The above command returns JSON structured like this:</p>
@@ -984,7 +984,7 @@
 
 <p><strong>Type:</strong> <code>GET</code></p>
 
-<p><strong>Content-Type:</strong> <code>application/x-www-form-urlencoded;charset=UTF-8</code></p>
+<p><strong>Content-Type:</strong> <code>application/json</code></p>
 
 <p><strong>Description:</strong> User&#39;s Force Orders (USER_DATA)</p>
 
@@ -1002,7 +1002,7 @@
 <td>contractName</td>
 <td>string</td>
 <td>true</td>
-<td>Contract name E.g. E-BTC-USD</td>
+<td>Contract name E.g. E-BTC-USDT</td>
 </tr>
 <tr>
 <td>beginTime</td>

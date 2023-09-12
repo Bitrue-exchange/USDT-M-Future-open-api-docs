@@ -1,9 +1,9 @@
 
-# USDⓈ-M Futures:order
+# order
 ## Account Trade List (USER_DATA)(HMAC SHA256)
 
 ```demo
-curl -X GET -i /fapi/v2/myTrades?contractName=E-SAND-USDC&fromId=&limit=10&startTime=&endTime=
+curl -X GET -i /fapi/v2/myTrades?contractName=E-SAND-USDT&fromId=&limit=10&startTime=&endTime=
 ```
 
 > The above command returns JSON structured like this:
@@ -18,7 +18,7 @@ curl -X GET -i /fapi/v2/myTrades?contractName=E-SAND-USDC&fromId=&limit=10&start
             "price":0.9,
             "qty":1,
             "amount":9,
-            "contractName":"E-SAND-USDC",
+            "contractName":"E-SAND-USDT",
             "side":"BUY",
             "fee":"0.0018",
             "bidId":1558124009467904992,
@@ -38,7 +38,7 @@ curl -X GET -i /fapi/v2/myTrades?contractName=E-SAND-USDC&fromId=&limit=10&start
 **Type:** `GET`
 
 
-**Content-Type:** `application/x-www-form-urlencoded;charset=UTF-8`
+**Content-Type:** `application/json`
 
 **Description:** Account Trade List (USER_DATA)(HMAC SHA256)
 
@@ -46,13 +46,13 @@ curl -X GET -i /fapi/v2/myTrades?contractName=E-SAND-USDC&fromId=&limit=10&start
 
 **Query-parameters:**
 
-| Parameter | Type | Required | Description |
-|-----------|------|----------|-------------|
-|contractName|string|true|Contract name E.g. E-BTC-USD|-|
-|fromId|long|false|Trade id to fetch from. Default gets most recent trades.|-|
-|limit|int|false|Default 100; max 1000.|-|
-|startTime|long|false|start time|-|
-|endTime|long|false|end time|-|
+| Parameter | Type | Required | Description                                              |
+|-----------|------|----------|----------------------------------------------------------|
+|contractName|string|true| Contract name E.g. E-BTC-USDT                            |-|
+|fromId|long|false| Trade id to fetch from. Default gets most recent trades. |-|
+|limit|int|false| Default 100; max 1000.                                   |-|
+|startTime|long|false| start time                                               |-|
+|endTime|long|false| end time                                                 |-|
 
 
 
@@ -83,7 +83,7 @@ curl -X GET -i /fapi/v2/myTrades?contractName=E-SAND-USDC&fromId=&limit=10&start
 
 ```demo
 curl -X POST -H 'Content-Type: application/json' -i /fapi/v2/positionMargin --data '{
-	'contractName': 'E-SAND-USDC',
+	'contractName': 'E-SAND-USDT',
 	'positionMargin': 10
 }'
 ```
@@ -112,10 +112,10 @@ curl -X POST -H 'Content-Type: application/json' -i /fapi/v2/positionMargin --da
 
 **Body-parameters:**
 
-| Parameter | Type | Required | Description |
-|-----------|------|----------|-------------|
-|contractName|string|true|Contract name E.g. E-BTC-USD|-|
-|amount|bigdecimal|true|amount|-|
+| Parameter | Type | Required | Description                   |
+|-----------|------|----------|-------------------------------|
+|contractName|string|true| Contract name E.g. E-BTC-USDT |-|
+|amount|bigdecimal|true| amount                        |-|
 
 
 
@@ -160,10 +160,10 @@ curl -X POST -H 'Content-Type: application/json' -i /fapi/v2/level_edit --data '
 
 **Body-parameters:**
 
-| Parameter | Type | Required | Description |
-|-----------|------|----------|-------------|
-|contractName|string|true|Contract name E.g. E-BTC-USD|-|
-|leverage|int|true|target initial leverage: int from 1 to 125|-|
+| Parameter | Type | Required | Description                                |
+|-----------|------|----------|--------------------------------------------|
+|contractName|string|true| Contract name E.g. E-BTC-USDT              |-|
+|leverage|int|true| target initial leverage: int from 1 to 125 |-|
 
 
 
@@ -178,7 +178,7 @@ curl -X POST -H 'Content-Type: application/json' -i /fapi/v2/level_edit --data '
 ## Current All Open Orders (USER_DATA)(HMAC SHA256)
 
 ```demo
-curl -X GET -i /fapi/v2/openOrders?contractName=E-SAND-USDC
+curl -X GET -i /fapi/v2/openOrders?contractName=E-SAND-USDT
 ```
 
 > The above command returns JSON structured like this:
@@ -210,7 +210,7 @@ curl -X GET -i /fapi/v2/openOrders?contractName=E-SAND-USDC
 **Type:** `GET`
 
 
-**Content-Type:** `application/x-www-form-urlencoded;charset=UTF-8`
+**Content-Type:** `application/json`
 
 **Description:** Current All Open Orders (USER_DATA)(HMAC SHA256)
 
@@ -218,9 +218,9 @@ curl -X GET -i /fapi/v2/openOrders?contractName=E-SAND-USDC
 
 **Query-parameters:**
 
-| Parameter | Type | Required | Description |
-|-----------|------|----------|-------------|
-|contractName|string|true|Contract name E.g. E-BTC-USD|-|
+| Parameter | Type | Required | Description                   |
+|-----------|------|----------|-------------------------------|
+|contractName|string|true| Contract name E.g. E-BTC-USDT |-|
 
 
 
@@ -249,7 +249,7 @@ curl -X GET -i /fapi/v2/openOrders?contractName=E-SAND-USDC
 
 ```demo
 curl -X POST -H 'Content-Type: application/json' -i /fapi/v2/cancel --data '{
-    'contractName': 'E-SAND-USDC', 
+    'contractName': 'E-SAND-USDT', 
     'clientOrderId': "",  
     'orderId': 1690615847831143159, 
 }
@@ -281,11 +281,11 @@ curl -X POST -H 'Content-Type: application/json' -i /fapi/v2/cancel --data '{
 
 **Body-parameters:**
 
-| Parameter | Type | Required | Description |
-|-----------|------|----------|-------------|
-|contractName|string|true|Contract name E.g. E-BTC-USD|-|
-|clientOrderId|string|false|client Order id(clientOrderId and orderId cannot both be empty)|-|
-|orderId|long|false|order id(clientOrderId and orderId cannot both be empty)|-|
+| Parameter | Type | Required | Description                                                     |
+|-----------|------|----------|-----------------------------------------------------------------|
+|contractName|string|true| Contract name E.g. E-BTC-USDT                                   |-|
+|clientOrderId|string|false| client Order id(clientOrderId and orderId cannot both be empty) |-|
+|orderId|long|false| order id(clientOrderId and orderId cannot both be empty)        |-|
 
 
 
@@ -337,7 +337,7 @@ curl -X GET -i /fapi/v2/order?contractName=E-SAND-USDT&orderId=16906157103921893
 **Type:** `GET`
 
 
-**Content-Type:** `application/x-www-form-urlencoded;charset=UTF-8`
+**Content-Type:** `application/json`
 
 **Description:** Query Order (USER_DATA)(HMAC SHA256)
 
@@ -345,11 +345,11 @@ curl -X GET -i /fapi/v2/order?contractName=E-SAND-USDT&orderId=16906157103921893
 
 **Query-parameters:**
 
-| Parameter | Type | Required | Description |
-|-----------|------|----------|-------------|
-|contractName|string|true|Contract name E.g. E-BTC-USD|-|
-|clientOrderId|string|false|client Order id(clientOrderId and orderId cannot both be empty)|-|
-|orderId|long|false|order id(clientOrderId and orderId cannot both be empty)|-|
+| Parameter | Type | Required | Description                                                     |
+|-----------|------|----------|-----------------------------------------------------------------|
+|contractName|string|true| Contract name E.g. E-BTC-USDT                                   |-|
+|clientOrderId|string|false| client Order id(clientOrderId and orderId cannot both be empty) |-|
+|orderId|long|false| order id(clientOrderId and orderId cannot both be empty)        |-|
 
 
 
@@ -378,7 +378,7 @@ curl -X GET -i /fapi/v2/order?contractName=E-SAND-USDT&orderId=16906157103921893
 
 ```demo
 curl -X POST -H 'Content-Type: application/json' -i /fapi/v2/order --data '{
-    'contractName': 'E-SAND-USDC', 
+    'contractName': 'E-SAND-USDT', 
     'clientOrderId': 7993967859, 
     'side': 'BUY', 
     'type': 'LIMIT', 
@@ -417,17 +417,17 @@ curl -X POST -H 'Content-Type: application/json' -i /fapi/v2/order --data '{
 
 **Body-parameters:**
 
-| Parameter | Type | Required | Description |
-|-----------|------|----------|-------------|
-|contractName|string|true|Contract name E.g. E-BTC-USD|-|
-|clientOrderId|string|false|Client order identity, a string with length less than 32 bit|-|
-|side|string|true|trade direction, BUY/SELL|-|
-|type|string|true|Order type, LIMIT,MARKET,IOC,FOK,POST_ONLY|-|
-|positionType|int|true|Hold-up position, 1 full position, 2 restrictive position|-|
-|open|string|true|Open balancing direction, OPEN/CLOSE|-|
-|volume|bigdecimal|true|Order quantity|-|
-|amount|bigdecimal|true|Order amount|-|
-|price|bigdecimal|true|Order price|-|
+| Parameter | Type | Required | Description                                                  |
+|-----------|------|----------|--------------------------------------------------------------|
+|contractName|string|true| Contract name E.g. E-BTC-USDT                                |-|
+|clientOrderId|string|false| Client order identity, a string with length less than 32 bit |-|
+|side|string|true| trade direction, BUY/SELL                                    |-|
+|type|string|true| Order type, LIMIT,MARKET,IOC,FOK,POST_ONLY                   |-|
+|positionType|int|true| Hold-up position, 1 full position, 2 restrictive position    |-|
+|open|string|true| Open balancing direction, OPEN/CLOSE                         |-|
+|volume|bigdecimal|true| Order quantity                                               |-|
+|amount|bigdecimal|true| Order amount                                                 |-|
+|price|bigdecimal|true| Order price                                                  |-|
 
 
 
@@ -461,7 +461,7 @@ curl -X POST -i /fapi/v2/allOpenOrders --data 'contractName=E-BTC-USDT'
 **Type:** `POST`
 
 
-**Content-Type:** `application/x-www-form-urlencoded;charset=UTF-8`
+**Content-Type:** `application/json`
 
 **Description:** Cancel All Open Orders (TRADE)(HMAC SHA256)
 
@@ -469,9 +469,9 @@ curl -X POST -i /fapi/v2/allOpenOrders --data 'contractName=E-BTC-USDT'
 
 **Query-parameters:**
 
-| Parameter | Type | Required | Description |
-|-----------|------|----------|-------------|
-|contractName|string|true|contractame Contract Name E.g. E-BTC-USD|-|
+| Parameter | Type | Required | Description                               |
+|-----------|------|----------|-------------------------------------------|
+|contractName|string|true| contractame Contract Name E.g. E-BTC-USDT |-|
 
 
 

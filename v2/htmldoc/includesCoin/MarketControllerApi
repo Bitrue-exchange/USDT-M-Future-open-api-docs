@@ -34,7 +34,7 @@
 
 <p><strong>Type:</strong> <code>GET</code></p>
 
-<p><strong>Content-Type:</strong> <code>application/x-www-form-urlencoded;charset=UTF-8</code></p>
+<p><strong>Content-Type:</strong> <code>application/json</code></p>
 
 <p><strong>Description:</strong> Order Book</p>
 
@@ -145,7 +145,7 @@
 
 <p><strong>Type:</strong> <code>GET</code></p>
 
-<p><strong>Content-Type:</strong> <code>application/x-www-form-urlencoded;charset=UTF-8</code></p>
+<p><strong>Content-Type:</strong> <code>application/json</code></p>
 
 <p><strong>Description:</strong> ticker</p>
 
@@ -241,7 +241,7 @@
 
 <p><strong>Type:</strong> <code>GET</code></p>
 
-<p><strong>Content-Type:</strong> <code>application/x-www-form-urlencoded;charset=UTF-8</code></p>
+<p><strong>Content-Type:</strong> <code>application/json</code></p>
 
 <p><strong>Description:</strong> Kline/Candlestick Data</p>
 
@@ -257,7 +257,7 @@
 <td>contractName</td>
 <td>string</td>
 <td>true</td>
-<td>Contract Name E.g. E-BTC-USDT</td>
+<td>Contract Name E.g. E-BTC-USD</td>
 </tr>
 <tr>
 <td>interval</td>
